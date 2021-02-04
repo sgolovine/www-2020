@@ -3,12 +3,15 @@ import ReactDOM from "react-dom";
 import "./tailwind.css";
 import Layout from "~/components/Layout";
 import Router from "~/routes/Router";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
   return (
-    <Layout>
-      <Router />
-    </Layout>
+    <BrowserRouter>
+      <Layout>
+        <Router />
+      </Layout>
+    </BrowserRouter>
   );
 };
 
