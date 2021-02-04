@@ -22,4 +22,6 @@ module.exports = {
   buildOptions: {
     /* ... */
   },
-}
+  // Map all routes to index.html since we use client side routes
+  routes: [{ match: "routes", src: ".*", dest: "/index.html" }],
+};

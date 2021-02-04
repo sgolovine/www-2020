@@ -1,6 +1,15 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import App from "./App"
-import "./tailwind.css"
+import React from "react";
+import ReactDOM from "react-dom";
+import "./tailwind.css";
+import Layout from "~/components/Layout";
+import Router from "~/routes/Router";
 
-ReactDOM.render(<App />, document.getElementById("root"))
+const App = () => {
+  return (
+    <Layout>
+      <Router />
+    </Layout>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("root"));
