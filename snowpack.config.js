@@ -6,11 +6,8 @@ module.exports = {
   mount: {
     public: { url: "/", static: true },
     src: { url: "/dist" },
-    /* ... */
   },
-  plugins: [
-    /* ... */
-  ],
+  plugins: [["@snowpack/plugin-babel"]],
   packageOptions: {
     /* ... */
   },
@@ -20,4 +17,4 @@ module.exports = {
   buildOptions: {
     /* ... */
   },
-};
+}
