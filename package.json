@@ -1,0 +1,10 @@
+{
+  "name": "sunnygolovine.com",
+  "version": "1.0.0",
+  "description": "My Personal Website",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Sunny Golovine",
+  "license": "MIT",
+  "scripts": {}
+}
