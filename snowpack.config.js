@@ -7,7 +7,11 @@ module.exports = {
     public: { url: "/", static: true },
     src: { url: "/dist" },
   },
-  plugins: [["@snowpack/plugin-babel"]],
+  plugins: [
+    "@snowpack/plugin-babel",
+    "@snowpack/plugin-postcss",
+    "@snowpack/plugin-react-refresh",
+  ],
   packageOptions: {
     /* ... */
   },
