@@ -11,7 +11,7 @@ module.exports = {
   plugins: [
     "@snowpack/plugin-babel",
     "@snowpack/plugin-postcss",
-    "@snowpack/plugin-react-refresh",
+    // "@snowpack/plugin-react-refresh",
   ],
   packageOptions: {
     /* ... */
