@@ -3,6 +3,7 @@ import ContentContainer from "~/components/home/ContentContainer";
 import ProfilePicture from "~/components/home/ProfllePicture";
 import ProjectItem from "~/components/home/ProjectItem";
 import SectionContainer from "~/components/home/SectionContainer";
+import ContactForm from "~/components/home/ContactForm";
 import SiteContext from "~/context/SiteContext";
 
 export default () => {
@@ -34,6 +35,7 @@ export default () => {
       </SectionContainer>
       <SectionContainer>
         <h2 className="text-2xl">Get in Touch</h2>
+        <ContactForm />
         <ContentContainer>
           <p>
             If you would like to get in touch you can find me on{" "}

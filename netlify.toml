@@ -1,0 +1,6 @@
+[build]
+  base = "/"
+  publish = "/build"
+  command = "snowpack build"
+  functions = "functions/"
+  
