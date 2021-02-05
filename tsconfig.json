@@ -12,7 +12,8 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "~/*": ["./src/*"],
+      "@data/*": ["./data/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,

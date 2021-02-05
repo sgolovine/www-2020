@@ -4,14 +4,17 @@ import "./tailwind.css";
 import Layout from "~/components/Layout";
 import Router from "~/routes/Router";
 import { BrowserRouter } from "react-router-dom";
+import { SiteContextProvider } from "~/context/SiteContext";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Router />
-      </Layout>
-    </BrowserRouter>
+    <SiteContextProvider>
+      <BrowserRouter>
+        <Layout>
+          <Router />
+        </Layout>
+      </BrowserRouter>
+    </SiteContextProvider>
   );
 };
 

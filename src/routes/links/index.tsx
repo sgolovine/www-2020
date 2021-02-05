@@ -6,7 +6,6 @@ export default () => {
   return (
     <div>
       <UnderConstruction pageName="links" />
-      <Link to="/blog">Blog</Link>
     </div>
   );
 };
