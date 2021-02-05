@@ -1,0 +1,14 @@
+{
+  "project": {
+    "version": 2,
+    "public": false,
+    "trailingSlash": false,
+    "alias": ["sunnygolovine.com"]
+  },
+  "github": {
+    "enabled": true,
+    "autoAlias": true,
+    "silent": false,
+    "autoJobCancellation": true
+  }
+}
