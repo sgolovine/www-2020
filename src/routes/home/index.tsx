@@ -1,44 +1,17 @@
-import React, { ReactNode, useContext } from "react";
+import React, { useContext } from "react";
+import ContentContainer from "~/components/home/ContentContainer";
+import ProfilePicture from "~/components/home/ProfllePicture";
+import ProjectItem from "~/components/home/ProjectItem";
+import SectionContainer from "~/components/home/SectionContainer";
 import SiteContext from "~/context/SiteContext";
-import { SiteProject } from "~/model/Context";
-
-const SectionContainer: React.FC<{ children: ReactNode }> = ({ children }) => {
-  return <div className="my-6">{children}</div>;
-};
-
-const ContentContainer: React.FC<{ children: ReactNode }> = ({ children }) => {
-  return <div className="mx-2 my-1">{children}</div>;
-};
-
-const ProjectItem: React.FC<SiteProject> = ({ name, desc, links }) => {
-  return (
-    <div className="my-4">
-      <h3 className="text-xl my-1">{name}</h3>
-      <p className="mx-2">{desc}</p>
-      {!!links && (
-        <div className="mx-2 mt-1">
-          {links.map((link, index) => (
-            <a
-              key={index}
-              href={link.href}
-              className="mr-4 text-blue-600 hover:underline"
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-};
 
 export default () => {
   const siteContext = useContext(SiteContext);
-  const { headline, bio, projects } = siteContext;
+  const { headline, bio, projects, links } = siteContext;
 
   return (
     <div>
-      <h1 className="text-3xl">{headline}</h1>
+      <ProfilePicture headline={headline} />
       <SectionContainer>
         <h2 className="text-2xl">About Me</h2>
         <ContentContainer>
@@ -51,6 +24,12 @@ export default () => {
           {projects.map((project, index) => {
             return <ProjectItem key={index} {...project} />;
           })}
+          <p>
+            Check out all of my projects on my{" "}
+            <a className="text-blue-600 hover:underline" href={links.github}>
+              Github Page
+            </a>
+          </p>
         </ContentContainer>
       </SectionContainer>
       <SectionContainer>
@@ -58,8 +37,16 @@ export default () => {
         <ContentContainer>
           <p>
             If you would like to get in touch you can find me on{" "}
-            <a href="#">Linkedin</a> or you can send me an email at{" "}
-            <a href="#">sunny@glvn.co</a>
+            <a className="text-blue-600 hover:underline" href={links.linkedin}>
+              Linkedin
+            </a>{" "}
+            or you can send me an email at{" "}
+            <a
+              className="text-blue-600 hover:underline"
+              href={`mailto:${links.email}`}
+            >
+              sunny@glvn.co
+            </a>
           </p>
         </ContentContainer>
       </SectionContainer>

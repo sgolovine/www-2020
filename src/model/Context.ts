@@ -1,4 +1,10 @@
-type LinkTypes = "github" | "instagram" | "linkedin" | "twitter" | "dev";
+type LinkTypes =
+  | "github"
+  | "instagram"
+  | "linkedin"
+  | "twitter"
+  | "dev"
+  | "email";
 
 export type SiteProject = {
   name: string;
