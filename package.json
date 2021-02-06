@@ -14,11 +14,9 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.13",
     "@babel/preset-react": "^7.12.13",
     "@babel/preset-typescript": "^7.12.13",
-    "@snowpack/plugin-babel": "^2.1.6",
-    "@snowpack/plugin-postcss": "^1.1.0",
-    "@snowpack/plugin-react-refresh": "^2.4.0",
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
     "@types/react-dom": "^17.0.0",
@@ -28,13 +26,13 @@
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "prettier": "^2.2.1",
-    "snowpack": "^3.0.11",
     "tailwindcss": "^2.0.2",
     "typescript": "^4.1.3"
   },
   "scripts": {
-    "start": "snowpack dev",
-    "build": "snowpack build",
+    "start": "next dev",
+    "build": "next build && next export",
+    "serve": "next start",
     "format": "prettier --write ./src/**/*.{tsx}",
     "ci": "tsc && yarn run format"
   }
