@@ -1,5 +1,6 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 type HeaderLinkProps = {
   name: string;
@@ -7,18 +8,17 @@ type HeaderLinkProps = {
 };
 
 export const HeaderLink: React.FC<HeaderLinkProps> = ({ link, name }) => {
-  // Use the useLocation hook here rather than
-  // window.location b/c of client side routing
-  const location = useLocation();
-  const isActive = location.pathname === link;
+  const router = useRouter();
+  const isActive = router.pathname === link;
   return (
-    <Link
-      className={`mx-2 text-sm font-semibold ${
-        isActive && "text-blue-600"
-      } hover:text-blue-600`}
-      to={link}
-    >
-      {name}
+    <Link href={link}>
+      <a
+        className={`mx-2 text-sm font-semibold ${
+          isActive && "text-blue-600"
+        } hover:text-blue-600`}
+      >
+        {name}
+      </a>
     </Link>
   );
 };

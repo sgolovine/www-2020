@@ -6,7 +6,7 @@ import SectionContainer from "~/components/home/SectionContainer";
 import ContactForm from "~/components/home/ContactForm";
 import SiteContext from "~/context/SiteContext";
 
-export default () => {
+const HomePage = () => {
   const siteContext = useContext(SiteContext);
   const { headline, bio, projects, links } = siteContext;
 
@@ -55,3 +55,5 @@ export default () => {
     </div>
   );
 };
+
+export default HomePage;

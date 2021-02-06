@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import UnderConstruction from "~/components/UnderConstruction";
 
-export default () => {
+const LinksPage = () => {
   return (
     <div>
       <UnderConstruction pageName="links" />
     </div>
   );
 };
+
+export default LinksPage;

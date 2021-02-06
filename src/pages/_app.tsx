@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "~/components/Layout";
 import { SiteContextProvider } from "~/context/SiteContext";
-import "./tailwind.css";
+import "~/tailwind.css";
 import { AppProps } from "next/app";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {

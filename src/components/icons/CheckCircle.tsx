@@ -1,6 +1,6 @@
 import React from "react";
 
-export default () => (
+const CheckCircle = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#059669">
     <path
       fillRule="evenodd"
@@ -9,3 +9,5 @@ export default () => (
     />
   </svg>
 );
+
+export default CheckCircle;

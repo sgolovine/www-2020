@@ -1,10 +1,12 @@
 import React from "react";
 import UnderConstruction from "~/components/UnderConstruction";
 
-export default () => {
+const ResumePage = () => {
   return (
     <div>
       <UnderConstruction pageName="resume" />
     </div>
   );
 };
+
+export default ResumePage;

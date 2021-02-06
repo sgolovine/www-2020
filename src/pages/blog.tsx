@@ -1,10 +1,12 @@
 import React from "react";
 import UnderConstruction from "~/components/UnderConstruction";
 
-export default () => {
+const Blog = () => {
   return (
     <div>
       <UnderConstruction pageName="blog" />
     </div>
   );
 };
+
+export default Blog;
