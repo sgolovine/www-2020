@@ -9,12 +9,25 @@
 
 ## Setup
 
-To start run `yarn install` to install dependencies.
-Then run `yarn netlify login` to login to Netlify.
-Finally after loggin in run `yarn netlify --telemetry-disable`
-to opt out of data gathering.
+1. Install Dependencies
 
-After this you can run the commands below
+```bash
+
+yarn install
+
+```
+
+2. Login to Netlify
+
+```bash
+yarn netlify login # login to netlify
+yarn netlify --telemetry-disable # disable telemetry
+
+```
+
+3. Setup ENV
+
+Copy `.env.example` to `.env` then replace the value for `SENDGRID_API_KEY` with your own
 
 ## Commands
 

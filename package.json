@@ -8,6 +8,7 @@
   "license": "MIT",
   "homepage": "https://glvn.co",
   "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
     "axios": "^0.21.1",
     "next": "^10.0.6",
     "react": "^17.0.1",
