@@ -1,42 +1,45 @@
 name: Test CI
 
 on:
+  push:
+    branches: ["master"]
   pull_request:
     types: [openend, syncronized, closed]
     branches: ["master"]
-  jobs:
-    lint-and-test-app:
-      runs-on: ubuntu-latest
 
-      strategy:
-        matrix:
-          node-versions: [12.x]
+jobs:
+  lint-and-test-app:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Checkout Code
-          uses: actions/checkout@v2
+    strategy:
+      matrix:
+        node-versions: [12.x]
 
-        - name: Use NodeJS ${{ matrix.node-version }}
-          uses: actions/setup-node@v1
-          with:
-            node-version: ${{ matrix.node-version }}
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
 
-        - name: Install Yarn
-          run: sudo npm install -g yarn
-          env:
-            CI: true
+      - name: Use NodeJS ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-        - name: Install Dependencies
-          run: yarn install --frozen-lockfile
-          env:
-            CI: true
+      - name: Install Yarn
+        run: sudo npm install -g yarn
+        env:
+          CI: true
 
-        - name: Run Typechecking
-          run: yarn tsc
-          env:
-            CI: true
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+        env:
+          CI: true
 
-        - name: Run Prettier
-          run: yarn format
-          env:
-            CI: true
+      - name: Run Typechecking
+        run: yarn tsc
+        env:
+          CI: true
+
+      - name: Run Prettier
+        run: yarn format
+        env:
+          CI: true
