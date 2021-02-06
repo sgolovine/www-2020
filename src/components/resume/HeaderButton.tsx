@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 
 type Props = {
-  children: string
-  onClick?: () => void
-}
+  children: string;
+  onClick?: () => void;
+};
 
 export const HeaderButton: React.FC<Props> = ({ children, onClick }) => {
   return (
@@ -13,5 +13,5 @@ export const HeaderButton: React.FC<Props> = ({ children, onClick }) => {
     >
       {children}
     </button>
-  )
-}
+  );
+};

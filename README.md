@@ -27,7 +27,7 @@ yarn netlify --telemetry-disable # disable telemetry
 
 3. Setup ENV
 
-Copy `.env.example` to `.env` then replace the value for `SENDGRID_API_KEY` with your own
+Create a file named `.env` and copy the values from `.env.exmple`. Replace values with your own.
 
 ## Commands
 

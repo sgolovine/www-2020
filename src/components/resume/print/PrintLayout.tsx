@@ -1,9 +1,9 @@
-import React, { ReactNode } from "react"
+import React, { ReactNode } from "react";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 export const PrintLayout: React.FC<Props> = ({ children }) => {
-  return <div className="px-12">{children}</div>
-}
+  return <div className="px-12">{children}</div>;
+};

@@ -1,10 +1,10 @@
-import React from "react"
-import { OutboundLink } from "../common/OutboundLink"
+import React from "react";
+import { OutboundLink } from "./OutboundLink";
 
-type Props = {}
+type Props = {};
 
 export const Footer: React.FC<Props> = ({}) => {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
 
   return (
     <div className="flex flex-col items-center pt-12">
@@ -15,5 +15,5 @@ export const Footer: React.FC<Props> = ({}) => {
         className="text-sm"
       />
     </div>
-  )
-}
+  );
+};
