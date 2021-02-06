@@ -37,6 +37,7 @@
     "serve": "next start",
     "format": "prettier --write '{src,functions,public,data}/**/*.{ts,tsx,js,json}'",
     "ci": "tsc && yarn run format",
-    "netlify-dev": "netlify dev"
+    "netlify-dev": "netlify dev",
+    "clean": "rm -rf ./.next ./out"
   }
 }

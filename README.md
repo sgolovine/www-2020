@@ -38,5 +38,6 @@ yarn build # build the app
 yarn format # runs prettier
 yarn ci # runs: tsc and prettier
 yarn netlify-dev # runs netlify dev server
+yarn clean # clean local cache
 
 ```
