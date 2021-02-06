@@ -1,9 +1,9 @@
-import React from "react"
-import { HeaderButton } from "~/components/common/HeaderButton"
-import { useRouter } from "next/router"
+import React from "react";
+import { HeaderButton } from "./HeaderButton";
+import { useRouter } from "next/router";
 
 export const Header = () => {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <div className="flex flex-row items-center justify-between mb-6">
       <div>
@@ -19,5 +19,5 @@ export const Header = () => {
         <HeaderButton onClick={() => router.push("/print")}>Print</HeaderButton>
       </div>
     </div>
-  )
-}
+  );
+};

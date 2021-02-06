@@ -1,9 +1,9 @@
-import React from "react"
-import { PrintSectionHeader } from "../common/SectionHeader"
+import React from "react";
+import { PrintSectionHeader } from "../SectionHeader";
 
 type Props = {
-  skills: string[]
-}
+  skills: string[];
+};
 
 export const PrintSkillsSection: React.FC<Props> = ({ skills }) => {
   return (
@@ -16,8 +16,8 @@ export const PrintSkillsSection: React.FC<Props> = ({ skills }) => {
           <p className="my-4 text-sm" key={i}>
             {skill}
           </p>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};

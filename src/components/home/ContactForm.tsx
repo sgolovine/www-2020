@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { setFlagsFromString } from "v8";
 import CheckCircle from "../icons/CheckCircle";
@@ -35,10 +36,10 @@ const ContactForm = () => {
   );
 
   useEffect(() => {
-    setMessageState(defaultMessage);
-  }, [form]);
+    console.log("Message State Changed: ", messageState);
+  }, [messageState]);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (!form.name) {
       setMessageState({
         show: true,
@@ -62,6 +63,34 @@ const ContactForm = () => {
         message: "Please enter a message",
       });
       return;
+    }
+    const resp = await axios({
+      method: "POST",
+      url: "/.netlify/functions/sendEmail",
+      validateStatus: (status) => {
+        return status >= 200 && status < 401;
+      },
+      data: {
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      },
+    });
+
+    if (resp.status === 200) {
+      console.log("200 resp status returned");
+      setMessageState({
+        show: true,
+        type: "success",
+        message: "Message Sent Successfully!",
+      });
+      setForm(defaultForm);
+    } else {
+      setMessageState({
+        show: true,
+        type: "error",
+        message: "Could not send message.",
+      });
     }
   };
 
@@ -98,7 +127,10 @@ const ContactForm = () => {
         <label className="text-sm font-bold">Your Name</label>
         <input
           value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
+          onChange={(e) => {
+            setForm({ ...form, name: e.target.value });
+            setMessageState(defaultMessage);
+          }}
           placeholder="John Doe"
           className="border rounded p-2 max-w-lg"
         />
@@ -109,14 +141,20 @@ const ContactForm = () => {
           placeholder="johndoe@gmail.com"
           className="border rounded p-2 max-w-lg"
           value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
+          onChange={(e) => {
+            setForm({ ...form, email: e.target.value });
+            setMessageState(defaultMessage);
+          }}
         />
       </div>
       <div className="flex flex-col p-2">
         <label className="text-sm font-bold">Message</label>
         <textarea
           value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          onChange={(e) => {
+            setForm({ ...form, message: e.target.value });
+            setMessageState(defaultMessage);
+          }}
           placeholder="Hey Sunny..."
           className="border rounded p-2 max-w-lg"
           rows={7}

@@ -8,6 +8,8 @@
   "license": "MIT",
   "homepage": "https://glvn.co",
   "dependencies": {
+    "@sendgrid/mail": "^7.4.2",
+    "axios": "^0.21.1",
     "next": "^10.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
@@ -21,6 +23,8 @@
     "@types/react-dom": "^17.0.0",
     "autoprefixer": "^10.2.4",
     "babel-plugin-module-resolver": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "netlify-cli": "^3.5.0",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "prettier": "^2.2.1",
@@ -31,7 +35,8 @@
     "start": "next dev",
     "build": "next build && next export",
     "serve": "next start",
-    "format": "prettier --write ./src/**/*.{tsx}",
-    "ci": "tsc && yarn run format"
+    "format": "prettier --write '{src,functions,public,data}/**/*.{ts,tsx,js,json}'",
+    "ci": "tsc && yarn run format",
+    "netlify-dev": "netlify dev"
   }
 }
