@@ -33,6 +33,7 @@
     "build": "next build && next export",
     "serve": "next start",
     "format": "prettier --write ./src/**/*.{tsx}",
-    "ci": "tsc && yarn run format"
+    "ci": "tsc && yarn run format",
+    "netlify-dev": "netlify dev"
   }
 }
