@@ -5,7 +5,7 @@ import { PostReturnType } from "~/model/Blog";
 import remark from "remark";
 import html from "remark-html";
 
-const postsDirectory = path.resolve(process.cwd(), "data", "posts");
+const postsDirectory = path.resolve(process.cwd(), "posts");
 
 // TODO: Markdown type should be VComptable.
 // package needs to be patched to expose this type

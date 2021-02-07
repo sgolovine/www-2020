@@ -43,3 +43,12 @@ yarn netlify-dev # runs netlify dev server
 yarn clean # clean local cache
 
 ```
+
+### Blog Workflow Commands
+
+```bash
+
+yarn post:create <post_name> #create a new post
+yarn post:delete <post_name> # delete a post
+
+```
