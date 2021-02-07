@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ContentContainer from "~/components/home/ContentContainer";
-import ProfilePicture from "~/components/home/ProfllePicture";
+import ProfilePicture from "~/components/home/ProfilePicture";
 import ProjectItem from "~/components/home/ProjectItem";
 import SectionContainer from "~/components/home/SectionContainer";
 import ContactForm from "~/components/home/ContactForm";
