@@ -1,17 +1,19 @@
 import React from "react";
 import ErrorPage from "next/error";
-import { fetchPost, fetchPostsMetadata } from "~/helpers/fetchPosts";
+import {
+  fetchPost,
+  fetchAllPosts,
+  transformMarkdown,
+} from "~/helpers/fetchPosts";
 import { Post } from "~/model/Blog";
-import { useRouter } from "next/router";
-import { GetStaticPaths, GetStaticProps } from "next";
 
 type Props = {
   post: Post | null;
   error: boolean;
 };
 
-const PostTemplate: React.FC<Props> = ({ post, error }) => {
-  if (!post || error) {
+const PostTemplate: React.FC<Props> = ({ post }) => {
+  if (!post) {
     return <ErrorPage statusCode={404} />;
   }
   console.log(post);
@@ -22,35 +24,32 @@ const PostTemplate: React.FC<Props> = ({ post, error }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-  if (context?.params?.slug) {
-    const filePath = `${context.params.slug}.md`;
-    const rawPost = await fetchPost(filePath);
-
-    return {
-      props: {
-        post: rawPost,
-        error: false,
+export async function getStaticProps(context: { params: { slug: string } }) {
+  const post = fetchPost(context.params.slug);
+  const content = await transformMarkdown(post.content);
+  return {
+    props: {
+      post: {
+        ...post,
+        content,
       },
-    };
-  } else {
-    return {
-      props: {
-        post: null,
-        error: true,
-      },
-    };
-  }
-};
+    },
+  };
+}
 
-// export const getStaticPaths: GetStaticPaths = async () => {
-//   return {
-//     paths: [
-//       { params: { slug: "resume-as-a-service" } },
-//       { params: { slug: "ten-year-blog" } },
-//     ],
-//     fallback: false,
-//   };
-// };
+export async function getStaticPaths() {
+  const posts = fetchAllPosts();
+
+  return {
+    paths: posts.map((item) => {
+      return {
+        params: {
+          slug: item.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
+}
 
 export default PostTemplate;

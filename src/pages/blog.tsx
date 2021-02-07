@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { fetchPostsMetadata } from "~/helpers/fetchPosts";
-import { PostMeta } from "~/model/Blog";
+import { fetchAllPosts } from "~/helpers/fetchPosts";
+import { PostReturnType } from "~/model/Blog";
 
 type PostListItemProps = {
   title: string;
@@ -11,7 +11,7 @@ type PostListItemProps = {
 };
 
 type Props = {
-  postsMetadata: PostMeta[];
+  postsMetadata: PostReturnType[];
 };
 
 const PostListItem: React.FC<PostListItemProps> = ({
@@ -59,7 +59,7 @@ const Blog: React.FC<Props> = ({ postsMetadata }) => {
 };
 
 export function getStaticProps() {
-  const postsMetadata = fetchPostsMetadata();
+  const postsMetadata = fetchAllPosts();
   return {
     props: {
       postsMetadata,
