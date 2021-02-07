@@ -1,8 +1,7 @@
 ---
 title: The 10 Year Blog
-description: Getting into blogging and making software last 
+description: Getting into blogging and making software last
 date: Dec 22, 2020
-slug: the-ten-year-blog
 ---
 
 Earlier this month I decided to start a blog. I had an ocean of options for how
@@ -25,9 +24,9 @@ export them? What format can they be exported in?
 It was clear that I would need to roll my own solution and for that I decided
 on a JAMStack based site built in Gatsby. The stack looks like this:
 
-* Blog Posts are written in Markdown using Frontmatter for metadata
-* The blog is built using Gatsby
-* The blog is hosted on Netlify.
+- Blog Posts are written in Markdown using Frontmatter for metadata
+- The blog is built using Gatsby
+- The blog is hosted on Netlify.
 
 It's a very rudimentary stack and that is very much on purpose. At the core is
 the Markdown based posts. I picked Markdown as it stikes a balance between

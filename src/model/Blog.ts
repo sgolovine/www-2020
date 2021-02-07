@@ -1,14 +1,10 @@
-export type Post = {
+export type PostMeta = {
   title: string;
   description: string;
   date: string;
-  postSlug: string;
-  content: string;
+  slug: string;
 };
 
-export type PostMeta = Pick<
-  Post,
-  "title" | "description" | "date" | "postSlug"
-> & {
-  folderSlug: string;
+export type Post = PostMeta & {
+  content: string;
 };

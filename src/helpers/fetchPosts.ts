@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { Post, PostMeta } from "~/model/Blog";
-import remark from "remark";
+import remark, { parse } from "remark";
 import html from "remark-html";
 
 // TODO: Markdown type should be VComptable.
@@ -16,33 +16,45 @@ export async function transformMarkdown(markdown: any) {
 // This function will give us just the metadata from each post
 // As well as the full path to the post so we know where to get the data
 // Once the user clicks on the post.
-export function fetchPostMetadata() {
+export function fetchPostsMetadata() {
   // Get the top level posts directory
   const postsDirectory = path.resolve(process.cwd(), "data", "posts");
 
   // Read all the folders in the posts directory
-  const postFolders = fs.readdirSync(postsDirectory);
+  const postSlugs = fs.readdirSync(postsDirectory);
 
   // Reduce posts
-  return postFolders.reduce((acc: PostMeta[], item: string) => {
+  return postSlugs.reduce((acc: PostMeta[], slug: string) => {
     // Get the post path. This assumes that the post will always be named `post.md`
     // And is always inside of a folder.
-    const postPath = path.resolve(postsDirectory, item, "post.md");
+    const postPath = path.resolve(postsDirectory, slug);
     // Read the contents and parse, we use matter here to return
     // An object from front-matter and content of the post
     const postContents = fs.readFileSync(postPath, "utf-8");
     const parsedContents = matter(postContents);
     // Before returning we groom the response
     // Flatten the object and remove an unused keys
-    return [
-      ...acc,
-      {
-        title: parsedContents.data.title,
-        description: parsedContents.data.description,
-        date: parsedContents.data.date,
-        postSlug: parsedContents.data.slug,
-        folderSlug: item,
-      },
-    ];
+    const post: PostMeta = {
+      title: parsedContents.data.title,
+      description: parsedContents.data.description,
+      date: parsedContents.data.date,
+      slug,
+    };
+    return [...acc, post];
   }, []);
+}
+
+export async function fetchPost(postSlug: string): Promise<Post> {
+  const postPath = path.resolve(process.cwd(), "data", "posts", postSlug);
+  const content = fs.readFileSync(postPath, "utf-8");
+  const parsedContents = matter(content);
+  const transformedMarkdown = await transformMarkdown(parsedContents.content);
+
+  return {
+    title: parsedContents.data.title,
+    description: parsedContents.data.description,
+    date: parsedContents.data.date,
+    content: transformedMarkdown,
+    slug: postSlug,
+  };
 }

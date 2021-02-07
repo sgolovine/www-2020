@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { fetchPostMetadata } from "~/helpers/fetchPosts";
+import { fetchPostsMetadata } from "~/helpers/fetchPosts";
 import { PostMeta } from "~/model/Blog";
 
 type PostListItemProps = {
@@ -11,7 +11,7 @@ type PostListItemProps = {
 };
 
 type Props = {
-  postMeta: PostMeta[];
+  postsMetadata: PostMeta[];
 };
 
 const PostListItem: React.FC<PostListItemProps> = ({
@@ -20,7 +20,9 @@ const PostListItem: React.FC<PostListItemProps> = ({
   description,
   slug,
 }) => {
-  const url = `/post/${slug}`;
+  // The normal slug contains the full filename
+  // While useful, remove from path.
+  const url = `/post/${slug.replace(".md", "")}`;
   return (
     <Link href={url}>
       <div className="border px-4 py-2 my-2 rounded hover:shadow cursor-pointer">
@@ -34,21 +36,20 @@ const PostListItem: React.FC<PostListItemProps> = ({
   );
 };
 
-const Blog: React.FC<Props> = ({ postMeta }) => {
-  console.log(postMeta);
+const Blog: React.FC<Props> = ({ postsMetadata }) => {
   return (
     <div>
       <h1 className="text-3xl">Blog</h1>
       <p>I post here occasionally about a variety of topics.</p>
       <div className="py-4">
-        {postMeta.map((post, index) => {
+        {postsMetadata.map((post, index) => {
           return (
             <PostListItem
-              key={`${post.postSlug}-${index}`}
+              key={`${post.slug}-${index}`}
               title={post.title}
               date={post.date}
               description={post.description}
-              slug={post.postSlug}
+              slug={post.slug}
             />
           );
         })}
@@ -57,11 +58,11 @@ const Blog: React.FC<Props> = ({ postMeta }) => {
   );
 };
 
-export async function getStaticProps() {
-  const postMeta = fetchPostMetadata();
+export function getStaticProps() {
+  const postsMetadata = fetchPostsMetadata();
   return {
     props: {
-      postMeta,
+      postsMetadata,
     },
   };
 }
