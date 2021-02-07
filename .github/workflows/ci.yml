@@ -1,11 +1,9 @@
 name: Test CI
 
 on:
-  push:
-    branches: ["master"]
   pull_request:
-    types: [openend, syncronized, closed]
-    branches: ["master"]
+    branches:
+      - master
 
 jobs:
   lint-and-test-app:
