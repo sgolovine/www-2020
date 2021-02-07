@@ -6,6 +6,8 @@ import {
   transformMarkdown,
 } from "~/helpers/fetchPosts";
 import { Post } from "~/model/Blog";
+import PostHeader from "~/components/blog/PostHeader";
+import PostBody from "~/components/blog/PostBody";
 
 type Props = {
   post: Post | null;
@@ -15,14 +17,15 @@ const PostTemplate: React.FC<Props> = ({ post }) => {
   if (!post) {
     return <ErrorPage statusCode={404} />;
   }
+
   return (
     <div>
-      <div className="flex flex-col items-center text-center">
-        <p className="text-sm text-gray-700">{post.date}</p>
-        <p className="text-sm text-gray-700">By Sunny Golovine</p>
-        <h1 className="text-3xl font-semibold py-4">{post.title}</h1>
-        <p className="text-sm text-gray-700">{post.description}</p>
-      </div>
+      <PostHeader
+        date={post.date}
+        title={post.title}
+        description={post.description}
+      />
+      <PostBody html={post.content} />
     </div>
   );
 };
