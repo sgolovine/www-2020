@@ -1,7 +1,5 @@
 module.exports = {
-  purge: [
-    "./src/**/*.tsx"
-  ],
+  purge: ["./src/**/*.tsx"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
@@ -9,5 +7,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: [require("@tailwindcss/typography")],
+};
