@@ -36,23 +36,33 @@ const PostListItem: React.FC<PostListItemProps> = ({
   );
 };
 
+const BlogEmptyComponent = () => {
+  return (
+    <div>
+      <p>There are no blog posts here yet...</p>
+    </div>
+  );
+};
+
 const Blog: React.FC<Props> = ({ postsMetadata }) => {
   return (
     <div>
-      <h1 className="text-3xl">Blog</h1>
-      <p>I post here occasionally about a variety of topics.</p>
       <div className="py-4">
-        {postsMetadata.map((post, index) => {
-          return (
-            <PostListItem
-              key={`${post.slug}-${index}`}
-              title={post.title}
-              date={post.date}
-              description={post.description}
-              slug={post.slug}
-            />
-          );
-        })}
+        {postsMetadata.length === 0 ? (
+          <BlogEmptyComponent />
+        ) : (
+          postsMetadata.map((post, index) => {
+            return (
+              <PostListItem
+                key={`${post.slug}-${index}`}
+                title={post.title}
+                date={post.date}
+                description={post.description}
+                slug={post.slug}
+              />
+            );
+          })
+        )}
       </div>
     </div>
   );
