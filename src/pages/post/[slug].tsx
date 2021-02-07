@@ -9,17 +9,20 @@ import { Post } from "~/model/Blog";
 
 type Props = {
   post: Post | null;
-  error: boolean;
 };
 
 const PostTemplate: React.FC<Props> = ({ post }) => {
   if (!post) {
     return <ErrorPage statusCode={404} />;
   }
-  console.log(post);
   return (
     <div>
-      <h1>Post template Page</h1>
+      <div className="flex flex-col items-center text-center">
+        <p className="text-sm text-gray-700">{post.date}</p>
+        <p className="text-sm text-gray-700">By Sunny Golovine</p>
+        <h1 className="text-3xl font-semibold py-4">{post.title}</h1>
+        <p className="text-sm text-gray-700">{post.description}</p>
+      </div>
     </div>
   );
 };
