@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import PageHeader from "~/components/common/PageHeader";
 import { fetchAllPosts } from "~/helpers/fetchPosts";
 import { PostReturnType } from "~/model/Blog";
 
@@ -55,24 +56,27 @@ const BlogEmptyComponent = () => {
 
 const Blog: React.FC<Props> = ({ postsMetadata }) => {
   return (
-    <div>
-      {postsMetadata.length === 0 ? (
-        <BlogEmptyComponent />
-      ) : (
-        postsMetadata.map((post, index) => {
-          return (
-            <PostListItem
-              key={`${post.slug}-${index}`}
-              title={post.title}
-              date={post.date}
-              description={post.description}
-              slug={post.slug}
-              lastChild={index === postsMetadata.length - 1}
-            />
-          );
-        })
-      )}
-    </div>
+    <>
+      <PageHeader headerText="Blog" />
+      <div>
+        {postsMetadata.length === 0 ? (
+          <BlogEmptyComponent />
+        ) : (
+          postsMetadata.map((post, index) => {
+            return (
+              <PostListItem
+                key={`${post.slug}-${index}`}
+                title={post.title}
+                date={post.date}
+                description={post.description}
+                slug={post.slug}
+                lastChild={index === postsMetadata.length - 1}
+              />
+            );
+          })
+        )}
+      </div>
+    </>
   );
 };
 
