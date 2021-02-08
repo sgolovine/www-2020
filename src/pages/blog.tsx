@@ -8,6 +8,7 @@ type PostListItemProps = {
   date: string;
   description: string;
   slug: string;
+  lastChild: boolean;
 };
 
 type Props = {
@@ -19,20 +20,28 @@ const PostListItem: React.FC<PostListItemProps> = ({
   date,
   description,
   slug,
+  lastChild,
 }) => {
   // The normal slug contains the full filename
   // While useful, remove from path.
   const url = `/post/${slug.replace(".md", "")}`;
   return (
-    <Link href={url}>
-      <div className="border px-4 py-2 my-2 rounded hover:shadow cursor-pointer">
-        <div className="flex flex-row justify-between items-center">
-          <p className="text-lg font-semibold">{title}</p>
-          <p className="text-sm">{date}</p>
+    <>
+      <div className="py-6">
+        <div className="flex flex-row justify-between">
+          <Link href={url}>
+            <a className="text-xl font-bold pb-4 hover:text-blue-700">
+              {title}
+            </a>
+          </Link>
+          <p className="text-gray-600">{date}</p>
         </div>
-        <p className="p-2">{description}</p>
+        <div>
+          <p className="text-gray-600">{description}</p>
+        </div>
       </div>
-    </Link>
+      {!lastChild && <hr />}
+    </>
   );
 };
 
@@ -47,23 +56,22 @@ const BlogEmptyComponent = () => {
 const Blog: React.FC<Props> = ({ postsMetadata }) => {
   return (
     <div>
-      <div className="py-4">
-        {postsMetadata.length === 0 ? (
-          <BlogEmptyComponent />
-        ) : (
-          postsMetadata.map((post, index) => {
-            return (
-              <PostListItem
-                key={`${post.slug}-${index}`}
-                title={post.title}
-                date={post.date}
-                description={post.description}
-                slug={post.slug}
-              />
-            );
-          })
-        )}
-      </div>
+      {postsMetadata.length === 0 ? (
+        <BlogEmptyComponent />
+      ) : (
+        postsMetadata.map((post, index) => {
+          return (
+            <PostListItem
+              key={`${post.slug}-${index}`}
+              title={post.title}
+              date={post.date}
+              description={post.description}
+              slug={post.slug}
+              lastChild={index === postsMetadata.length - 1}
+            />
+          );
+        })
+      )}
     </div>
   );
 };
