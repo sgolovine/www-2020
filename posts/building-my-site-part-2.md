@@ -1,11 +1,11 @@
 ---
 title: Building SunnyGolovine.com - Part 2
-description: 
-  In my last post I talked about some of the decisions I made when
+description: In my last post I talked about some of the decisions I made when
   building my site. In this post I'll talk about the architecture
 date: Feb 08, 2021
 slug: building-my-site-part-2
 ---
+
 In my last post I talked about some of the decisions I made leading up to
 building my site. In this post I wanted to talk more about the architecture
 decisions that went into building SunnyGolovine.com
@@ -39,8 +39,8 @@ overhead.
 I never put much thought into image optimization. NextJS after all recently
 introduced `next/image` which automatically optimizes your images. I put it in
 and didn't think much of it until my builds started to fail. Digging into the
-issue, it turns out that `next/image` with it's default loader is not compatable
-with `next export`. 
+issue, it turns out that `next/image` with it's default loader is not compatible
+with `next export`.
 
 My solution here was to use another image optimization library called
 `next-optimized-images`. While the docs looked pretty scary at first, getting
@@ -61,10 +61,10 @@ Netlify.
 
 While this solution seems the most straightforward, it came with two
 drawbacks. First, the setup in a React project isn't straightforward and
-requires some workarounds, having alrady done this on a previous project, I
-wasn't lookign forward to it. Second, getting the message to Netlify was only
+requires some workarounds, having already done this on a previous project, I
+wasn't looking forward to it. Second, getting the message to Netlify was only
 one piece of the puzzle. I would then have to route that message to my inbox or
-check Netlify religiously for any new mesages, not ideal.
+check Netlify religiously for any new messages, not ideal.
 
 The alternative to Forms is to use Functions. Netlify Functions lets you write
 serverless functions that you can trigger from your frontend. This is great if
@@ -75,7 +75,6 @@ Inbox.
 There are still some drawbacks here, on Sendgrid's default plan I'm limited to
 just 100 messages per day so if I ever start getting high amounts of traffic on
 my site, I may have to reconsider this approach.
-
 
 ## Looking Forward
 
