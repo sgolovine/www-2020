@@ -1,5 +1,7 @@
-// Pages we should not show the header on.
-export const noHeaderRoutes = ["/"];
+export const noHeaderRoutes = ["/resume/print"];
+
+// Pages we should not show the page header on.
+export const noPageHeaderRoutes = ["/"];
 
 export const pageHeaders = {
   "/blog": "Blog Posts",
