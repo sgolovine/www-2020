@@ -1,5 +1,5 @@
 import React from "react";
-import { profilePictureSrc } from "~/constants/profilePicture";
+const profileImage = require("~/img/profile-face.jpg");
 
 type Props = {
   headline: string;
@@ -8,7 +8,7 @@ type Props = {
 const ProfilePicture: React.FC<Props> = ({ headline }) => {
   return (
     <div className="max-w-xs mx-auto text-center">
-      <img src={profilePictureSrc} alt="Profile Picture" />
+      <img src={profileImage} alt="Profile Picture" />
       <h1 className="text-3xl mt-6">{headline}</h1>
     </div>
   );
