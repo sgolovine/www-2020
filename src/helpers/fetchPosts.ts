@@ -22,7 +22,7 @@ export function getPostSlugs() {
 
 export function fetchAllPosts(): PostReturnType[] {
   const postSlugs = getPostSlugs();
-  return postSlugs.map((slug) => {
+  const flatPosts: PostReturnType[] = postSlugs.map((slug) => {
     const postPath = path.resolve(postsDirectory, `${slug}.md`);
     const postContents = fs.readFileSync(postPath);
     const parsedContents = matter(postContents);
@@ -35,6 +35,12 @@ export function fetchAllPosts(): PostReturnType[] {
     };
     return flatPost;
   });
+  const sortedFlatPosts = flatPosts.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+  return sortedFlatPosts;
 }
 
 export function fetchPost(slug: string): PostReturnType {
