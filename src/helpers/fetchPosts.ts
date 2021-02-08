@@ -15,7 +15,8 @@ export async function transformMarkdown(markdown: any) {
 }
 
 export function getPostSlugs() {
-  const postSlugs = fs.readdirSync(postsDirectory);
+  const allFiles = fs.readdirSync(postsDirectory);
+  const postSlugs = allFiles.filter((item) => item.includes(".md"));
   return postSlugs.map((slug) => slug.replace(".md", ""));
 }
 
