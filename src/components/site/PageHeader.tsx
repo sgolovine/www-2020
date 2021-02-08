@@ -11,7 +11,7 @@ const PageHeader = () => {
     return null;
   }
   return (
-    <div className="pb-12">
+    <div className="pt-6">
       <h1 className="text-2xl font-bold">{headerText}</h1>
     </div>
   );

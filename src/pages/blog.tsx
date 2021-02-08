@@ -28,9 +28,9 @@ const PostListItem: React.FC<PostListItemProps> = ({
   return (
     <>
       <div className="py-6">
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-col sm:flex-row pb-4 sm:pb-initial justify-between">
           <Link href={url}>
-            <a className="text-xl font-bold pb-4 hover:text-blue-700">
+            <a className="sm:text-xl text-lg font-bold sm:pb-4 hover:text-blue-700">
               {title}
             </a>
           </Link>

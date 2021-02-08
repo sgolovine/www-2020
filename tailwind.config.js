@@ -2,7 +2,13 @@ module.exports = {
   purge: ["./src/**/*.tsx"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        instagram: "#E4405F",
+        linkedin: "#0077B5",
+        github: "#181717",
+      },
+    },
   },
   variants: {
     extend: {},

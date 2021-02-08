@@ -25,7 +25,7 @@ export const HeaderLink: React.FC<HeaderLinkProps> = ({ link, name }) => {
 
 const Header = () => {
   return (
-    <div className="flex flex-row h-full justify-between items-center">
+    <div className="flex flex-row justify-between mt-4">
       <h1 className="font-bold">Sunny Golovine</h1>
       <div>
         <HeaderLink name="Home" link="/" />
