@@ -30,8 +30,8 @@ const ContactInfoItem: React.FC<ContactInfoItemProps> = ({
 export const ContactInfoSection: React.FC<Props> = ({ contactInfo }) => {
   return (
     <div>
-      <div className="flex flex-row justify-between items-start">
-        <div>
+      <div className="flex flex-col sm:flex-row sm:justify-between items-initial sm:items-start">
+        <div className="self-start w-full sm:w-1/3">
           <ContactInfoItem
             label="Phone"
             value={contactInfo.phone}
@@ -43,7 +43,7 @@ export const ContactInfoSection: React.FC<Props> = ({ contactInfo }) => {
             href={`mailto:${contactInfo.email}`}
           />
         </div>
-        <div className="self-end">
+        <div className="self-end w-full sm:w-1/2">
           <ContactInfoItem
             label="Website"
             value={stripHttp(contactInfo.website)}

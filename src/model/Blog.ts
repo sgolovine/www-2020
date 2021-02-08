@@ -1,11 +1,8 @@
-export type PostMeta = {
+export type Post = {
   title: string;
   description: string;
   date: string;
   slug: string;
-};
-
-export type Post = PostMeta & {
   content: string;
 };
 

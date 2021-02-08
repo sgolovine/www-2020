@@ -7,7 +7,7 @@ type HeaderLinkProps = {
   link: string;
 };
 
-export const HeaderLink: React.FC<HeaderLinkProps> = ({ link, name }) => {
+const HeaderLink: React.FC<HeaderLinkProps> = ({ link, name }) => {
   const router = useRouter();
   const isActive = router.pathname === link;
   return (
