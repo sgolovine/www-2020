@@ -36,7 +36,8 @@ Create a file named `.env` and copy the values from `.env.exmple`. Replace value
 ```bash
 
 yarn start # start dev server
-yarn build # build the app
+yarn build # build the app. Runs 'next build' and 'next export'
+yarn build:dry # runs 'next build' without 'next export'
 yarn format # runs prettier
 yarn ci # runs: tsc and prettier
 yarn netlify-dev # runs netlify dev server

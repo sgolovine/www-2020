@@ -42,6 +42,7 @@
   "scripts": {
     "start": "next dev",
     "build": "next build && next export",
+    "build:dry": "next build",
     "serve": "next start",
     "format": "prettier --write '{src,functions,public,data}/**/*.{ts,tsx,js,json}'",
     "ci": "tsc && yarn run format",

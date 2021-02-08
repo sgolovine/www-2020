@@ -41,3 +41,8 @@ jobs:
         run: yarn format
         env:
           CI: true
+
+      - name: Run Dry Build
+        run: yarn build:dry
+        env:
+          CI: true
