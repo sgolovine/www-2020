@@ -43,8 +43,8 @@ const PrintPage: React.FC<Props> = ({ sections }) => {
       <div className="flex flex-row justify-center">
         <OutboundLink
           className="text-sm"
-          name="https://resume.glvn.co"
-          href="https://resume.glvn.co/"
+          name="https://sunnygolovine.com/resume"
+          href="https://sunnygolovine.com/resume"
         />
       </div>
     </PrintLayout>

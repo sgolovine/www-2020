@@ -1,103 +1,16 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { setFlagsFromString } from "v8";
+import React from "react";
+import useContactForm from "~/hooks/useContactForm";
 import CheckCircle from "../icons/CheckCircle";
 import ErrorCircle from "../icons/ErrorCircle";
 
-type FormState = {
-  name: string;
-  email: string;
-  message: string;
-};
-
-type MessageState = {
-  show: boolean;
-  type: "success" | "error" | null;
-  message: string | null;
-};
-
-const defaultForm: FormState = {
-  name: "",
-  email: "",
-  message: "",
-};
-
-const defaultMessage: MessageState = {
-  show: false,
-  type: null,
-  message: null,
-};
-
 const ContactForm = () => {
-  const [form, setForm] = useState<FormState>(defaultForm);
-
-  const [messageState, setMessageState] = useState<MessageState>(
-    defaultMessage
-  );
-
-  useEffect(() => {
-    console.log("Message State Changed: ", messageState);
-  }, [messageState]);
-
-  const handleSubmit = async () => {
-    if (!form.name) {
-      setMessageState({
-        show: true,
-        type: "error",
-        message: "Please enter a name",
-      });
-      return;
-    }
-    if (!form.email) {
-      setMessageState({
-        show: true,
-        type: "error",
-        message: "Please enter an email",
-      });
-      return;
-    }
-    if (!form.message) {
-      setMessageState({
-        show: true,
-        type: "error",
-        message: "Please enter a message",
-      });
-      return;
-    }
-    const resp = await axios({
-      method: "POST",
-      url: "/.netlify/functions/sendEmail",
-      validateStatus: (status) => {
-        return status >= 200 && status < 401;
-      },
-      data: {
-        name: form.name,
-        email: form.email,
-        message: form.message,
-      },
-    });
-
-    if (resp.status === 200) {
-      console.log("200 resp status returned");
-      setMessageState({
-        show: true,
-        type: "success",
-        message: "Message Sent Successfully!",
-      });
-      setForm(defaultForm);
-    } else {
-      setMessageState({
-        show: true,
-        type: "error",
-        message: "Could not send message.",
-      });
-    }
-  };
-
-  const handleClear = () => {
-    setMessageState(defaultMessage);
-    setForm(defaultForm);
-  };
+  const {
+    form,
+    messageState,
+    handleSubmit,
+    handleClear,
+    setFormField,
+  } = useContactForm();
 
   return (
     <div>
@@ -127,10 +40,7 @@ const ContactForm = () => {
         <label className="text-sm font-bold">Your Name</label>
         <input
           value={form.name}
-          onChange={(e) => {
-            setForm({ ...form, name: e.target.value });
-            setMessageState(defaultMessage);
-          }}
+          onChange={(e) => setFormField("name", e.target.value)}
           placeholder="John Doe"
           className="border rounded p-2 max-w-lg"
         />
@@ -141,20 +51,14 @@ const ContactForm = () => {
           placeholder="johndoe@gmail.com"
           className="border rounded p-2 max-w-lg"
           value={form.email}
-          onChange={(e) => {
-            setForm({ ...form, email: e.target.value });
-            setMessageState(defaultMessage);
-          }}
+          onChange={(e) => setFormField("email", e.target.value)}
         />
       </div>
       <div className="flex flex-col p-2">
         <label className="text-sm font-bold">Message</label>
         <textarea
           value={form.message}
-          onChange={(e) => {
-            setForm({ ...form, message: e.target.value });
-            setMessageState(defaultMessage);
-          }}
+          onChange={(e) => setFormField("message", e.target.value)}
           placeholder="Hey Sunny..."
           className="border rounded p-2 max-w-lg"
           rows={7}

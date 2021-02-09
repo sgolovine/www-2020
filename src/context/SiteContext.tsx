@@ -1,8 +1,8 @@
 import React, { createContext, ReactNode } from "react";
 import { SiteContext } from "~/model/Context";
-import links from "@data/links.json";
-import projects from "@data/projects.json";
-import about from "@data/about.json";
+import links from "@data/site/links.json";
+import projects from "@data/site/projects.json";
+import about from "@data/site/about.json";
 
 type Props = {
   children: ReactNode;
