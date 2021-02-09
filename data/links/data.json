@@ -1,0 +1,48 @@
+{
+  "name": "Sunny Golovine",
+  "bio": "I make iPhone apps",
+  "location": {
+    "label": "Atlanta, GA",
+    "link": "https://goo.gl/maps/szY1ddXgpsi2m1eH9"
+  },
+  "email": "sunny@glvn.co",
+  "phone": "+16786462358",
+  "links": [
+    {
+      "name": "Email",
+      "href": "mailto:sunny@glvn.co",
+      "key": "email"
+    },
+    {
+      "name": "Instagram",
+      "href": "https://instagram.com/sgolovine",
+      "key": "instagram"
+    },
+    {
+      "name": "Twitter",
+      "href": "https://twitter.com/_glvn",
+      "key": "twitter"
+    },
+    {
+      "name": "Github",
+      "href": "https://github.com/sgolovine",
+      "key": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "href": "https://linkedin.com/in/SunnyGolovine",
+      "key": "linkedin"
+    },
+    {
+      "name": "Resume",
+      "href": "https://resume.glvn.co",
+      "key": "resume"
+    }
+  ],
+  "vcard": {
+    "firstName": "Sunny",
+    "lastName": "Golovine",
+    "workPhone": "678-646-2358",
+    "url": "https://sunny.gg"
+  }
+}
