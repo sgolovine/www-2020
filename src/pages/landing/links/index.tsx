@@ -4,8 +4,11 @@ import { Avatar } from "~/components/links/Avatar";
 import { LinkButton } from "~/components/links/LinkButton";
 import linksContext from "~/context/LinksContext";
 import { isMobile } from "react-device-detect";
+import Layout from "~/components/links/Layout";
+import { useRouter } from "next/router";
 
 const HomePage = () => {
+  const router = useRouter();
   const data = useContext(linksContext);
 
   const handleAddToContacts = () => {
@@ -13,11 +16,12 @@ const HomePage = () => {
   };
 
   const handleContact = () => {
+    router.push("/landing/links/contact");
     // navigate("/contact");
   };
 
   return (
-    <div>
+    <Layout>
       <Avatar />
       <div className="flex flex-col items-center py-4">
         <h1 className="text-lg font-semibold">{data.name}</h1>
@@ -63,7 +67,7 @@ const HomePage = () => {
           );
         })}
       </div>
-    </div>
+    </Layout>
   );
 };
 

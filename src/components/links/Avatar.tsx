@@ -1,5 +1,5 @@
 import React from "react";
-const profileImage = require("~/img/profile-face.jpg");
+const profileImage = require("~/img/profile-face.png");
 
 export const Avatar = () => {
   return (
