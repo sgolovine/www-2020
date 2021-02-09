@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "~/components/site/Layout";
 import { SiteContextProvider } from "~/context/SiteContext";
 import { ResumeContextProvider } from "~/context/ResumeContext";
-import "~/tailwind.css";
+import "~/styles/tailwind.css";
 import { AppProps } from "next/app";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
