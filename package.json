@@ -51,6 +51,7 @@
     "netlify-dev": "netlify dev",
     "clean": "rm -rf ./.next ./out",
     "post:create": "node scripts/createPost.js",
-    "post:delete": "node scripts/deletePost.js"
+    "post:delete": "node scripts/deletePost.js",
+    "post:ls": "node scripts/listPosts.js"
   }
 }
