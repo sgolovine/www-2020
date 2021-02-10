@@ -17,7 +17,7 @@ off, a simple landing page that directs your visitors to connect with you on
 social media, email you, etc.
 
 I had previously a built a version and hosted it on
-[sunny.gg]("https://sunny.gg"). However this time around I wanted something that
+[sunny.gg](https://sunny.gg). However this time around I wanted something that
 was integrated into my bigger site. Doing this was pretty straightforward, my
 frontend code for sunny.gg was already written in React and used TailwindCSS so
 I was good to go there. The incompatibility came to which framework it used.
