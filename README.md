@@ -4,6 +4,8 @@
 
 ![Test CI](https://github.com/sgolovine/sunnygolovine.com/workflows/Test%20CI/badge.svg)
 
+[View Code](https://github1s.com/sgolovine/sunnygolovine.com)
+
 ## Prerequisites
 
 - NodeJS v10+
@@ -34,14 +36,53 @@ Create a file named `.env` and copy the values from `.env.exmple`. Replace value
 ## Commands
 
 ```bash
+  # Build the app
+   - build
+      NODE_ENV=production next build && next export
 
-yarn start # start dev server
-yarn build # build the app. Runs 'next build' and 'next export'
-yarn build:dry # runs 'next build' without 'next export'
-yarn format # runs prettier
-yarn ci # runs: tsc and prettier
-yarn netlify-dev # runs netlify dev server
-yarn clean # clean local cache
+  # Build the app but don't export (used in CI)
+   - build:dry
+      NODE_ENV=production next build
+
+  # Run CI commands locally (prettier + typescript)
+   - ci
+      tsc && yarn run format
+
+  # Clean local project cache
+   - clean
+      rm -rf ./.next ./out
+
+  # Run Prettier
+   - format
+      prettier --write '{src,functions,public,data}/**/*.{ts,tsx,js,json}'
+
+  # Run with local netlify backend (for testing functions)
+   - netlify-dev
+      NODE_ENV=development netlify dev
+
+  # Create a blog post post:create <new_post_name>
+   - post:create
+      node scripts/createPost.js
+
+  # Delete a post post:delete <post_filename>
+   - post:delete
+      node scripts/deletePost.js
+
+  # List all posts in the /posts directory
+   - post:ls
+      node scripts/listPosts.js
+
+  # Serve local content
+   - serve
+      next start
+
+  # Start the dev server
+   - start
+      NODE_ENV=development next dev
+
+  # Test production builds locally
+   - test-prod
+      yarn build && yarn serve
 
 ```
 
