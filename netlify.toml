@@ -4,3 +4,8 @@
   command = "next build && next export"
   functions = "functions/"
   
+[[ redirects ]]
+  from = "https://sunnygolovinedotcom.netlify.app"
+  to = "https://sunnygolovine.com"
+  status = 301
+  force = true
