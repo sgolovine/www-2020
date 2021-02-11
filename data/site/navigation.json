@@ -1,0 +1,26 @@
+{
+  "headerRoutes": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Blog",
+      "path": "/blog"
+    },
+    {
+      "name": "Links",
+      "path": "/landing/links"
+    },
+    {
+      "name": "Resume",
+      "path": "/resume"
+    }
+  ],
+  "devOnlyRoutes": [
+    {
+      "name": "Dev",
+      "path": "/dev"
+    }
+  ]
+}

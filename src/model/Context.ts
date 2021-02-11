@@ -15,6 +15,11 @@ export type SiteProject = {
   }[];
 };
 
+export type ContextRoute = {
+  name: string;
+  path: string;
+};
+
 export type SiteContext = {
   headline: string;
   bio: string;
@@ -22,4 +27,8 @@ export type SiteContext = {
     [K in LinkTypes]: string;
   };
   projects: SiteProject[];
+  navigation: {
+    prodRoutes: ContextRoute[];
+    devRoutes: ContextRoute[];
+  };
 };
