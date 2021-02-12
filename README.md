@@ -1,5 +1,7 @@
 ## My Website
 
+![screenshot](./screenshot.png)
+
 [Hosted at sunnygolovine.com](https://sunnygolovine.com)
 
 ![Test CI](https://github.com/sgolovine/sunnygolovine.com/workflows/Test%20CI/badge.svg)
