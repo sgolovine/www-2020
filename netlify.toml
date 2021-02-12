@@ -3,6 +3,9 @@
   publish = "/out"
   command = "next build && next export"
   functions = "functions/"
+
+[context.production]
+  enviorment = { NODE_ENV = 'production' }
   
 [[ redirects ]]
   from = "https://sunnygolovinedotcom.netlify.app"
