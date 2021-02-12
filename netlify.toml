@@ -4,8 +4,14 @@
   command = "next build && next export"
   functions = "functions/"
 
-[context.production]
-  enviorment = { NODE_ENV = 'production' }
+[context.deploy-preview.enviroment]
+  NODE_ENV = 'production'
+
+[context.production.enviorment]
+  NODE_ENV = 'production'
+
+[context.branch-deploy.enviorment]
+  NODE_ENV = 'production'
   
 [[ redirects ]]
   from = "https://sunnygolovinedotcom.netlify.app"
