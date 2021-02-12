@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
+import router from "next/router";
 import PageHeader from "~/components/common/PageHeader";
 import { deviceDetect } from "react-device-detect";
+import { isDev } from "~/constants/env";
 
 const DeviceInfo = () => {
   const deviceInfo = deviceDetect();
@@ -43,6 +45,11 @@ const DeviceInfo = () => {
 };
 
 const DevPage = () => {
+  useEffect(() => {
+    if (!isDev) {
+      router.push("/");
+    }
+  });
   return (
     <div>
       <PageHeader headerText="Hidden Dev Page" />
