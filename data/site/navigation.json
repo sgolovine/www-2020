@@ -9,10 +9,6 @@
       "path": "/blog"
     },
     {
-      "name": "Links",
-      "path": "/landing/links"
-    },
-    {
       "name": "Resume",
       "path": "/resume"
     }
