@@ -16,7 +16,7 @@
   "devOnlyRoutes": [
     {
       "name": "Dev",
-      "path": "/dev"
+      "path": "/debug"
     }
   ]
 }
