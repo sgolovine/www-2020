@@ -3,7 +3,6 @@ import ContentContainer from "~/components/home/ContentContainer";
 import ProfilePicture from "~/components/home/ProfilePicture";
 import ProjectItem from "~/components/home/ProjectItem";
 import SectionContainer from "~/components/home/SectionContainer";
-import ContactForm from "~/components/home/ContactForm";
 import SiteContext from "~/context/SiteContext";
 
 const HomePage = () => {
@@ -33,7 +32,7 @@ const HomePage = () => {
           </p>
         </ContentContainer>
       </SectionContainer>
-      <SectionContainer>
+      {/* <SectionContainer>
         <h2 className="text-2xl">Get in Touch</h2>
         <ContactForm />
         <ContentContainer>
@@ -51,7 +50,7 @@ const HomePage = () => {
             </a>
           </p>
         </ContentContainer>
-      </SectionContainer>
+      </SectionContainer> */}
     </div>
   );
 };

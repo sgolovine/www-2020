@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = ({ children }) => {
   const shouldShowHeader = !noHeaderRoutes.includes(pathName);
 
   return (
-    <div className="max-w-3xl mx-auto flex flex-col min-h-screen">
+    <div className="max-w-xl mx-auto flex flex-col min-h-screen">
       {shouldShowHeader && (
         <header className="h-18 px-4">
           <SocialHeader />

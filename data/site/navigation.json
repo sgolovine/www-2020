@@ -11,12 +11,16 @@
     {
       "name": "Resume",
       "path": "/resume"
+    },
+    {
+      "name": "Contact",
+      "path": "/contact"
     }
   ],
   "devOnlyRoutes": [
     {
       "name": "Dev",
-      "path": "/dev"
+      "path": "/debug"
     }
   ]
 }

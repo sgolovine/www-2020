@@ -4,6 +4,7 @@ import links from "@data/site/links.json";
 import projects from "@data/site/projects.json";
 import about from "@data/site/about.json";
 import navigation from "@data/site/navigation.json";
+import contact from "@data/site/contact.json";
 
 type Props = {
   children: ReactNode;
@@ -14,6 +15,10 @@ const contextValue: SiteContext = {
   bio: about.bio,
   links: links,
   projects: projects.projects,
+  contactInfo: {
+    email: contact.email,
+    phone: contact.phone,
+  },
   navigation: {
     prodRoutes: navigation.headerRoutes,
     devRoutes: navigation.devOnlyRoutes,
