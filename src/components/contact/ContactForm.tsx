@@ -65,16 +65,16 @@ const ContactForm = () => {
           cols={50}
         />
       </div>
-      <div className="p-3 flex flex-row">
+      <div className="p-2 flex flex-row justify-around">
         <button
           onClick={handleSubmit}
-          className="p-2 bg-blue-500 w-32 rounded text-white font-bold mr-1"
+          className="p-2 bg-blue-500 w-36 rounded text-white font-bold mr-1"
         >
           Send
         </button>
         <button
           onClick={handleClear}
-          className="p-2 bg-red-500 w-32 rounded text-white font-bold ml-1"
+          className="p-2 bg-red-500 w-36 rounded text-white font-bold ml-1"
         >
           Clear
         </button>
