@@ -45,9 +45,14 @@ const GuestbookPage = () => {
           ) : (
             parsedGuestbookData.map((item, index) => {
               return (
-                <p className="mb-4" key={`gb-item-${index}-${item[0]}`}>
-                  {item}
-                </p>
+                <>
+                  <p className="mb-4" key={`gb-item-${index}-${item[0]}`}>
+                    {item}
+                  </p>
+                  {index !== parsedGuestbookData.length && (
+                    <p className="my-2 text-2xl font-bold">...</p>
+                  )}
+                </>
               );
             })
           )}
