@@ -2,9 +2,6 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
 
-const gistId = "c17bbdf54e9a1c27a19c3b7f77551a9e";
-const gistFilename = "guestbook.txt";
-
 const useGuestbook = () => {
   const [message, setMessage] = useState<string>("");
   const [shouldFetchGuestbook, setShouldFetchGuestbook] = useState<boolean>(
