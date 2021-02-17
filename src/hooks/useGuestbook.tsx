@@ -21,10 +21,18 @@ const useGuestbook = () => {
     if (shouldFetchGuestbook) {
       setShouldFetchGuestbook(false);
       setGuestbookLoading(true);
-      axios.get(`https://api.github.com/gists/${gistId}`).then((resp) => {
-        setGuestbookLoading(false);
-        setGuestbookData(resp.data.files[gistFilename].content);
-      });
+      axios
+        .get(
+          `https://api.github.com/gists/${process.env.NEXT_PUBLIC_GUESTBOOK_GIST_ID}`
+        )
+        .then((resp) => {
+          setGuestbookLoading(false);
+          setGuestbookData(
+            resp.data.files[
+              process.env.NEXT_PUBLIC_GUESTBOOK_FILENAME as string
+            ].content
+          );
+        });
     }
   }, [shouldFetchGuestbook]);
 
