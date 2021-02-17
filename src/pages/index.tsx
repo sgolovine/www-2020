@@ -32,27 +32,9 @@ const HomePage = () => {
           </p>
         </ContentContainer>
       </SectionContainer>
-      {/* <SectionContainer>
-        <h2 className="text-2xl">Get in Touch</h2>
-        <ContactForm />
-        <ContentContainer>
-          <p>
-            If you would like to get in touch you can find me on{" "}
-            <a className="text-blue-600 hover:underline" href={links.linkedin}>
-              Linkedin
-            </a>{" "}
-            or you can send me an email at{" "}
-            <a
-              className="text-blue-600 hover:underline"
-              href={`mailto:${links.email}`}
-            >
-              sunny@glvn.co
-            </a>
-          </p>
-        </ContentContainer>
-      </SectionContainer> */}
     </div>
   );
 };
 
+// ts-prune-ignore-next
 export default HomePage;

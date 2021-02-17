@@ -51,4 +51,5 @@ const PrintPage: React.FC<Props> = ({ sections }) => {
   );
 };
 
+// ts-prune-ignore-next
 export default PrintPage;

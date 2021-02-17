@@ -1,4 +1,4 @@
-export const NODE_ENVS = {
+const NODE_ENVS = {
   dev: "development",
   prod: "production",
 };

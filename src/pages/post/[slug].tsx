@@ -30,6 +30,7 @@ const PostTemplate: React.FC<Props> = ({ post }) => {
   );
 };
 
+// ts-prune-ignore-next
 export async function getStaticProps(context: { params: { slug: string } }) {
   const post = fetchPost(context.params.slug);
   const content = await transformMarkdown(post.content);
@@ -43,6 +44,7 @@ export async function getStaticProps(context: { params: { slug: string } }) {
   };
 }
 
+// ts-prune-ignore-next
 export async function getStaticPaths() {
   const posts = fetchAllPosts();
 
@@ -58,4 +60,5 @@ export async function getStaticPaths() {
   };
 }
 
+// ts-prune-ignore-next
 export default PostTemplate;

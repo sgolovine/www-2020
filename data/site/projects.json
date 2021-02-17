@@ -63,20 +63,6 @@
           "href": "https://tiptrack.app/"
         }
       ]
-    },
-    {
-      "name": "sunny.gg",
-      "desc": "A linktree alternative built in Preact and TailwindCSS",
-      "links": [
-        {
-          "name": "Website",
-          "href": "https://sunny.sh"
-        },
-        {
-          "name": "Source Code",
-          "href": "https://github.com/sgolovine/sunny.gg"
-        }
-      ]
     }
   ]
 }

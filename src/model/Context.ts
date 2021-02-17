@@ -5,7 +5,7 @@ export type SocialLinkTypes =
   | "twitter"
   | "dev";
 
-export type ContactInfoTypes = "phone" | "email";
+type ContactInfoTypes = "phone" | "email";
 
 export type SiteProject = {
   name: string;
@@ -16,7 +16,7 @@ export type SiteProject = {
   }[];
 };
 
-export type ContextRoute = {
+type ContextRoute = {
   name: string;
   path: string;
 };
@@ -31,8 +31,5 @@ export type SiteContext = {
     [K in ContactInfoTypes]: string;
   };
   projects: SiteProject[];
-  navigation: {
-    prodRoutes: ContextRoute[];
-    devRoutes: ContextRoute[];
-  };
+  navigation: ContextRoute[];
 };

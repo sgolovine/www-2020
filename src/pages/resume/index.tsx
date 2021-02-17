@@ -35,4 +35,5 @@ const ResumePage = () => {
   );
 };
 
+// ts-prune-ignore-next
 export default ResumePage;
