@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Github, Instagram, LinkedIn } from "../icons/SocialIcons";
 
@@ -19,6 +20,11 @@ const SocialHeader = () => {
           <Instagram />
         </div>
       </a>
+      <Link href="/guestbook">
+        <a className="text-xs flex flex-row justify-center items-center px-2 bg-blue-500 text-white font-bold rounded shadow">
+          Guestbook
+        </a>
+      </Link>
     </div>
   );
 };

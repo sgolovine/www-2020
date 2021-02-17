@@ -1,6 +1,6 @@
 // React hook to let UI components easily connect to Sendgrid message sending action
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 
 type FormState = {
   name: string;
