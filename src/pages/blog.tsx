@@ -35,6 +35,7 @@ const Blog: React.FC<Props> = ({ postsMetadata }) => {
   );
 };
 
+// ts-prune-ignore-next
 export function getStaticProps() {
   const postsMetadata = fetchAllPosts();
   return {
@@ -44,4 +45,5 @@ export function getStaticProps() {
   };
 }
 
+// ts-prune-ignore-next
 export default Blog;

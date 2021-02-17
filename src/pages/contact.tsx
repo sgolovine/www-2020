@@ -34,4 +34,5 @@ const ContactPage = () => {
   );
 };
 
+// ts-prune-ignore-next
 export default ContactPage;

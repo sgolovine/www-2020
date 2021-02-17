@@ -78,4 +78,5 @@ const LinksContactPage = () => {
   );
 };
 
+// ts-prune-ignore-next
 export default LinksContactPage;

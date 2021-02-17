@@ -19,10 +19,7 @@ const contextValue: SiteContext = {
     email: contact.email,
     phone: contact.phone,
   },
-  navigation: {
-    prodRoutes: navigation.headerRoutes,
-    devRoutes: navigation.devOnlyRoutes,
-  },
+  navigation: navigation.headerRoutes,
 };
 
 const siteContext = createContext<SiteContext>(contextValue);

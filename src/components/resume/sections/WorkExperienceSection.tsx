@@ -17,7 +17,7 @@ type WorkExperienceItemProps = {
   url: string;
 };
 
-export const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
+const WorkExperienceItem: React.FC<WorkExperienceItemProps> = ({
   name,
   position,
   startDate,

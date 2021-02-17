@@ -12,7 +12,7 @@ type EducationItemProps = {
   gradDate: string;
 };
 
-export const EducationItem: React.FC<EducationItemProps> = ({
+const EducationItem: React.FC<EducationItemProps> = ({
   name,
   degree,
   gradDate,

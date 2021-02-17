@@ -22,4 +22,5 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   );
 };
 
+// ts-prune-ignore-next
 export default App;

@@ -51,4 +51,5 @@ const GuestbookPage = () => {
   );
 };
 
+// ts-prune-ignore-next
 export default GuestbookPage;

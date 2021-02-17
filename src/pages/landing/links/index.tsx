@@ -71,4 +71,5 @@ const HomePage = () => {
   );
 };
 
+// ts-prune-ignore-next
 export default HomePage;

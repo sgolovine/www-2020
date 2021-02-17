@@ -31,7 +31,7 @@ const Header = () => {
     <div className="flex flex-row justify-between mt-4">
       <h1 className="font-bold">Sunny Golovine</h1>
       <div>
-        {navigation.prodRoutes.map((route) => {
+        {navigation.map((route) => {
           return (
             <HeaderLink key={route.path} link={route.path} name={route.name} />
           );
