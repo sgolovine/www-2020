@@ -26,7 +26,7 @@ exports.handler = async function (event, _context, callback) {
 
     const currentContent = getResp.data.files[GUESTBOOK_FILENAME].content;
 
-    const newContent = currentContent + "\n\n" + userMessage;
+    const newContent = userMessage + "\n" + currentContent;
 
     const updateResp = await axios({
       method: "PATCH",

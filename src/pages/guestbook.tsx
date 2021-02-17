@@ -7,9 +7,9 @@ const GuestbookPage = () => {
     message,
     updateMessage,
     submitMessage,
-    guestbookData,
     guestbookLoading,
     guestbookState,
+    parsedGuestbookData,
   } = useGuestbook();
   return (
     <>
@@ -39,11 +39,17 @@ const GuestbookPage = () => {
           )}
         </div>
         <hr className="my-6" />
-        <div>
+        <div className="flex flex-col flex-wrap">
           {guestbookLoading ? (
             <pre>Loading...</pre>
           ) : (
-            <pre>{guestbookData}</pre>
+            parsedGuestbookData.map((item, index) => {
+              return (
+                <p className="mb-4" key={`gb-item-${index}-${item[0]}`}>
+                  {item}
+                </p>
+              );
+            })
           )}
         </div>
       </div>
