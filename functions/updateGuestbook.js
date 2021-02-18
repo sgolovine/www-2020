@@ -1,6 +1,9 @@
 // Update guestbook gist
 require("dotenv").config();
 const axios = require("axios");
+const { clean } = require("unzalgo");
+const createDOMPurify = require("dompurify");
+const { JSDOM } = require("jsdom");
 
 exports.handler = async function (event, _context, callback) {
   const {
@@ -16,6 +19,15 @@ exports.handler = async function (event, _context, callback) {
       callback(null, { statusCode: 400, body: "Missing Params!" });
       return;
     }
+
+    // Sanitation
+    // Remove Zalgo Characters
+    const removeZalgo = clean(userMessage);
+    // DOM Purify
+    const window = new JSDOM("").window;
+    const DOMPurify = createDOMPurify(window);
+    const domPurified = DOMPurify.sanitize(removeZalgo).trim();
+
     const getResp = await axios({
       method: "GET",
       url: `https://api.github.com/gists/${GUESTBOOK_GIST_ID}`,
@@ -26,7 +38,7 @@ exports.handler = async function (event, _context, callback) {
 
     const currentContent = getResp.data.files[GUESTBOOK_FILENAME].content;
 
-    const newContent = userMessage + "\n" + currentContent;
+    const newContent = domPurified + "\n" + currentContent;
 
     const updateResp = await axios({
       method: "PATCH",
@@ -47,7 +59,8 @@ exports.handler = async function (event, _context, callback) {
     console.log(updateResp.statusCode);
 
     callback(null, { statusCode: 201, body: "Success!" });
-  } catch {
+  } catch (e) {
+    console.log("error from API", e);
     callback(null, { statusCode: 400, body: "Error!" });
     return;
   }
