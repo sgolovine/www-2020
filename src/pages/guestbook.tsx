@@ -10,6 +10,8 @@ const GuestbookPage = () => {
     guestbookLoading,
     guestbookState,
     parsedGuestbookData,
+    showError,
+    errorMessage,
   } = useGuestbook();
   return (
     <>
@@ -25,7 +27,10 @@ const GuestbookPage = () => {
           onChange={(e) => updateMessage(e.target.value)}
           placeholder="Your message"
           className="border rounded p-2 w-full"
+          maxLength={160}
         />
+        <p className="text-sm">{message.length}/160</p>
+        {showError && <p className="text-sm text-red-500">{errorMessage}</p>}
         <div className="flex flex-row justify-end my-2">
           {guestbookState !== "post" && (
             <button

@@ -1,5 +1,4 @@
 import axios from "axios";
-import DOMPurify from "dompurify";
 import { useEffect, useState } from "react";
 
 const useGuestbook = () => {
@@ -15,6 +14,9 @@ const useGuestbook = () => {
   const [guestbookState, setGuestbookState] = useState<
     "pre" | "submitting" | "post"
   >("pre");
+
+  const [showError, setShowError] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   useEffect(() => {
     // Add a date to the end of the URL so axios never caches it.
@@ -35,11 +37,21 @@ const useGuestbook = () => {
     }
   }, [shouldFetchGuestbook]);
 
-  const updateMessage = (newMessage: string) => setMessage(newMessage);
+  const updateMessage = (newMessage: string) => {
+    setShowError(false);
+    setErrorMessage("");
+    setMessage(newMessage);
+  };
 
   const submitMessage = async () => {
     setGuestbookState("submitting");
-    const sanitized = DOMPurify.sanitize(message);
+
+    if (message.length > 160) {
+      setShowError(true);
+      setErrorMessage("Message can only be up to 160 characters!");
+      setGuestbookState("pre");
+      return;
+    }
     // Submit the message here
     const resp = await axios({
       method: "POST",
@@ -48,7 +60,7 @@ const useGuestbook = () => {
         return status >= 200 && status < 401;
       },
       data: {
-        userMessage: sanitized,
+        userMessage: message,
       },
     });
     if (resp.status === 201) {
@@ -76,6 +88,8 @@ const useGuestbook = () => {
     guestbookData,
     guestbookLoading,
     parsedGuestbookData,
+    showError,
+    errorMessage,
   };
 };
 
