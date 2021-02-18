@@ -59,8 +59,7 @@ exports.handler = async function (event, _context, callback) {
     console.log(updateResp.statusCode);
 
     callback(null, { statusCode: 201, body: "Success!" });
-  } catch (e) {
-    console.log("error from API", e);
+  } catch {
     callback(null, { statusCode: 400, body: "Error!" });
     return;
   }
