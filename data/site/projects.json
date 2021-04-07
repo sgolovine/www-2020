@@ -2,7 +2,13 @@
   "projects": [
     {
       "name": "Property Abacus (Upcomming)",
-      "desc": "And upcomming real estate investment calculator. Built with NextJS and TailwindCSS, allows users to caculate rental income and expenses on a property"
+      "desc": "Quickly create and share bookmark collections with others using Github Gist. This is the spiritual successor to Fav.sh",
+      "links": [
+        {
+          "name": "Website",
+          "href": "https://gistmarks.io"
+        }
+      ]
     },
     {
       "name": "Webhost Watchdog",

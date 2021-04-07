@@ -1,10 +1,11 @@
 {
   "sideProjects": [
     {
-      "name": "Property Abacus",
+      "name": "GistMarks",
       "startDate": "2021",
       "endDate": "Present",
-      "description": "A real estate investment calculator. Allows users to input property expenses and revenues and see metrics such as Internal Rate of Return, CAP Rate, Cashflows and other metrics relevant to real estate investment. Built using NextJS and TailwindCSS",
+      "description": "Quickly create and share bookmark collections with others using Github Gist",
+      "link": "https://gistmarks.io",
       "type": "Website"
     },
     {
