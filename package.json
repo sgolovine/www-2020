@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",
-    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-react": "^7.13.13",
     "@babel/preset-typescript": "^7.12.13",
     "@tailwindcss/typography": "^0.4.0",
     "@types/dompurify": "^2.2.1",
