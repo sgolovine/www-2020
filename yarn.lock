@@ -10550,10 +10550,10 @@ ts-pnp@^1.1.6:
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.2.0.tgz#a500ad084b0798f1c3071af391e65912c86bca92"
   integrity sha512-csd+vJOb/gkzvcCHgTGSChYpy5f1/XKNsmvBGO4JXS+z1v2HobugDz4s1IeFXM3wZB44uczs+eazB5Q/ccdhQw==
 
-ts-prune@^0.8.8:
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/ts-prune/-/ts-prune-0.8.8.tgz#b471047d5274ac00431776e40c7904b1aedfd658"
-  integrity sha512-gpjjtYckhuDuNP5HD7GEBzhoStmlBwlO9ZAvMxursseH+qBOVGFzGL5KGJiJzBHPdPs7p/LRcQWcwPjOhxwqZg==
+ts-prune@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/ts-prune/-/ts-prune-0.9.0.tgz#ca37bdb85a2441a8571a60721cbc65e32e156280"
+  integrity sha512-+9xCkIS9EUTzQAl4NnqcU5gs9Q7cllafs9qjZ6GHSvWm8T/W5daJpDCsXGz+pUZmK25n/vEqUikN5CctAoGXbg==
   dependencies:
     commander "^6.2.1"
     cosmiconfig "^7.0.0"
