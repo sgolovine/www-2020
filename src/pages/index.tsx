@@ -3,6 +3,7 @@ import ContentContainer from "~/components/home/ContentContainer";
 import ProfilePicture from "~/components/home/ProfilePicture";
 import ProjectItem from "~/components/home/ProjectItem";
 import SectionContainer from "~/components/home/SectionContainer";
+import Layout from "~/components/site/Layout";
 import SiteContext from "~/context/SiteContext";
 
 const HomePage = () => {
@@ -10,7 +11,7 @@ const HomePage = () => {
   const { headline, bio, projects, links } = siteContext;
 
   return (
-    <div>
+    <Layout>
       <ProfilePicture headline={headline} />
       <SectionContainer>
         <h2 className="text-2xl">About Me</h2>
@@ -32,7 +33,7 @@ const HomePage = () => {
           </p>
         </ContentContainer>
       </SectionContainer>
-    </div>
+    </Layout>
   );
 };
 

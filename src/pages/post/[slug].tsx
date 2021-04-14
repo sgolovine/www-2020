@@ -8,6 +8,7 @@ import {
 import { Post } from "~/model/Blog";
 import PostHeader from "~/components/blog/PostHeader";
 import PostBody from "~/components/blog/PostBody";
+import Layout from "~/components/site/Layout";
 
 type Props = {
   post: Post | null;
@@ -19,14 +20,14 @@ const PostTemplate: React.FC<Props> = ({ post }) => {
   }
 
   return (
-    <div>
+    <Layout blogPost>
       <PostHeader
         date={post.date}
         title={post.title}
         description={post.description}
       />
       <PostBody html={post.content} />
-    </div>
+    </Layout>
   );
 };
 
