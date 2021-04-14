@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PageHeader from "~/components/common/PageHeader";
 import ContactForm from "~/components/contact/ContactForm";
 import SocialLink from "~/components/contact/SocialLink";
+import Layout from "~/components/site/Layout";
 import siteContext from "~/context/SiteContext";
 import { SocialLinkTypes } from "~/model/Context";
 
@@ -10,7 +11,7 @@ const ContactPage = () => {
   const linkKeys = Object.keys(links) as SocialLinkTypes[];
 
   return (
-    <>
+    <Layout>
       <PageHeader headerText="Contact Me" />
       <p>
         You can contact me by sending a me a message below. You can also reach
@@ -30,7 +31,7 @@ const ContactPage = () => {
           return <SocialLink key={key} href={links[key]} type={key} />;
         })}
       </div>
-    </>
+    </Layout>
   );
 };
 

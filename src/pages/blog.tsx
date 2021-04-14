@@ -2,6 +2,7 @@ import React from "react";
 import BlogEmpty from "~/components/blog/BlogEmpty";
 import PostListItem from "~/components/blog/PostListItem";
 import PageHeader from "~/components/common/PageHeader";
+import Layout from "~/components/site/Layout";
 import { fetchAllPosts } from "~/helpers/fetchPosts";
 import { PostReturnType } from "~/model/Blog";
 
@@ -11,7 +12,7 @@ type Props = {
 
 const Blog: React.FC<Props> = ({ postsMetadata }) => {
   return (
-    <>
+    <Layout>
       <PageHeader headerText="Blog" />
       <div>
         {postsMetadata.length === 0 ? (
@@ -31,7 +32,7 @@ const Blog: React.FC<Props> = ({ postsMetadata }) => {
           })
         )}
       </div>
-    </>
+    </Layout>
   );
 };
 

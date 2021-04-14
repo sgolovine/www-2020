@@ -1,5 +1,6 @@
 import React from "react";
 import PageHeader from "~/components/common/PageHeader";
+import Layout from "~/components/site/Layout";
 import useGuestbook from "~/hooks/useGuestbook";
 
 const GuestbookPage = () => {
@@ -14,7 +15,7 @@ const GuestbookPage = () => {
     errorMessage,
   } = useGuestbook();
   return (
-    <>
+    <Layout>
       <PageHeader headerText="Guestbook" />
       <p>
         {guestbookState === "post"
@@ -60,7 +61,7 @@ const GuestbookPage = () => {
           )}
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 
