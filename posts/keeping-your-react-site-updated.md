@@ -62,7 +62,7 @@ is picky about package versions and you need to test every upgraded package to
 make sure things work. While slow, it's the best way of making sure you don't
 break anything.
 
-## Th "Automatic" Way.
+## The "Automatic" Way.
 
 If you looked at the last two ways and though to yourself "well this still
 sucks" then I agree with you. In fact the best way I found to keep packages up
@@ -77,3 +77,11 @@ and merge the PR.
 
 Both of these bots do largely the same thing and it doesn't really matter which
 one you get, and for personal projects both are free.
+
+And while these bots are great for ongoing maintenance, I would not recommend
+using them out of the gate if you have a ton of outdated dependencies. The
+reason is they will create a PR for every outdated dependency, and if you have
+CI that needs to run before a PR is merged, this may turn out to be more of a
+hassle for what it's worth. My suggestion is to use option 1 or option 2 to
+update all your dependencies then utilize dependency bots for all subsequent
+updates.
