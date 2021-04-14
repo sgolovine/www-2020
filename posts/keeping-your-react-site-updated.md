@@ -48,7 +48,7 @@ So today I want to cover a few ways to avoid this issue.
 ## The "Fast" Way
 
 If you are confident upgrading all your packages to the latest version won't
-break anything, you can run `npm upgrade-latest` or `yarn upgrade-latest` to
+break anything, you can run `npm upgrade --latest` or `yarn upgrade --latest` to
 upgrade all the packages in your `package.json` to the latest version.
 
 One might think that you could upgrade individual packages by running `npm/yarn upgrade <package_name>` and while that is true, it only updates the version in
