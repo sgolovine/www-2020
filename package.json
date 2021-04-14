@@ -18,7 +18,7 @@
     "next": "^10.0.6",
     "next-optimized-images": "^2.6.2",
     "react": "^17.0.1",
-    "react-device-detect": "^1.15.0",
+    "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.1",
     "react-query": "^3.9.8",
     "remark": "^13.0.0",
