@@ -7,7 +7,6 @@ import { SiteContext } from "~/context";
 const IndexPage = () => {
   const siteContext = useContext(SiteContext);
 
-  console.log(siteContext);
   return (
     <>
       <Section>

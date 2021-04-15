@@ -18,7 +18,7 @@ interface Props {
 
 const Header: React.FC = () => {
   return (
-    <div>
+    <div className="pr-4 md:pr-0">
       <h1 className="text-3xl">Sunny Golovine</h1>
     </div>
   );
@@ -26,8 +26,8 @@ const Header: React.FC = () => {
 
 const Sidebar: React.FC = () => {
   return (
-    <div>
-      <ul className="text-right">
+    <div className="pr-4 md:pr-0">
+      <ul className="block text-right">
         <li className="py-2 uppercase font-bold text-lg">
           <Link href={Routes.Home}>HOME</Link>
         </li>
@@ -58,17 +58,20 @@ const Layout: React.FC<Props> = ({ children }) => {
       {/* Header */}
       <div className="text-right py-16">
         <Header />
+        <div className="block md:hidden">
+          <Sidebar />
+        </div>
       </div>
 
       {/* Primary Content */}
       <div className="flex flex-row">
         {/* Sidebar */}
-        <div className="px-10">
+        <div className="px-10 hidden md:block">
           <Sidebar />
         </div>
 
         {/* Main Content */}
-        <div>{children}</div>
+        <div className="w-full px-4 md:px-0">{children}</div>
       </div>
     </div>
   );
