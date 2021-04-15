@@ -6,16 +6,6 @@ interface Props {
   children: ReactNode;
 }
 
-/**
- * HEADER
- * ------------------------------
- * SIDEBAR |
- * SIDEBAR |
- * SIDEBAR | .   PRIMARY CONTENT
- * SIDEBAR |
- * SIDEBAR |
- */
-
 const Header: React.FC = () => {
   return (
     <div className="pr-4 md:pr-0">
