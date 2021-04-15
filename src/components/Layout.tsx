@@ -31,9 +31,9 @@ const Sidebar: React.FC = () => {
         <li className="py-2 uppercase font-bold text-lg">
           <Link href={Routes.Home}>HOME</Link>
         </li>
-        <li className="py-2 uppercase font-bold text-lg">
+        {/* <li className="py-2 uppercase font-bold text-lg">
           <Link href={Routes.About}>ABOUT</Link>
-        </li>
+        </li> */}
         <li className="py-2 uppercase font-bold text-lg">
           <Link href={Routes.Blog}>BLOG</Link>
         </li>

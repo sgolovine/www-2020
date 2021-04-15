@@ -3,12 +3,15 @@ import { AppProps } from "next/app";
 import Layout from "~/components/Layout";
 import "~/styles/tailwind.css";
 import "~/styles/base.css";
+import ContextWrapper from "~/context";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ContextWrapper>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ContextWrapper>
   );
 };
 
