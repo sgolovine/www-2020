@@ -3,6 +3,22 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme("colors.gray.800"),
+            h2: {
+              color: theme("colors.brand-yellow"),
+            },
+            code: {
+              color: theme("colors.brand-yellow"),
+            },
+            a: {
+              color: theme("colors.brand-link"),
+            },
+          },
+        },
+      }),
       colors: {
         instagram: "#E4405F",
         linkedin: "#0077B5",

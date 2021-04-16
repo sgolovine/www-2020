@@ -14,7 +14,7 @@ interface PostProps {
 }
 
 const PostItem: React.FC<PostProps> = ({ post }) => {
-  const getSlug = (slug: string) => `/post/${slug}`;
+  const getSlug = (slug: string) => `/blog/post/${slug}`;
 
   return (
     <div className="pb-12">
