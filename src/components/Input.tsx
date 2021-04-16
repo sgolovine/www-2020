@@ -5,6 +5,7 @@ interface InputProps {
   onChange: (newValue: string) => void;
   label?: string;
   placeholder?: string;
+  maxLength?: number;
 }
 
 export const TextInput: React.FC<InputProps> = ({
@@ -35,6 +36,7 @@ export const TextArea: React.FC<InputProps> = ({
   onChange,
   placeholder,
   label,
+  maxLength,
 }) => {
   return (
     <div className="mb-4 flex flex-col">
@@ -49,6 +51,7 @@ export const TextArea: React.FC<InputProps> = ({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
+        maxLength={maxLength}
       />
     </div>
   );
