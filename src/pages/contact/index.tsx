@@ -1,8 +1,9 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useContext, useState } from "react";
 import { Button } from "~/components/Button";
 import { TextArea, TextInput } from "~/components/Input";
 import { Section } from "~/components/Section";
 import { Header } from "~/components/Typography";
+import { SiteContext } from "~/context";
 import useContactForm, { MessageState } from "~/hooks/useContactForm";
 
 interface NotifierProps {
@@ -43,9 +44,20 @@ const ContactPage = () => {
     setFormField,
   } = useContactForm();
 
+  const siteContext = useContext(SiteContext);
+
   return (
     <>
       <Header>Contact</Header>
+      <Section>
+        <p>
+          Enter your information below to send me a message. You can also email
+          me directly at{" "}
+          <a href={`mailto:${siteContext.contactInfo.email}`}>
+            {siteContext.contactInfo.email}
+          </a>
+        </p>
+      </Section>
       <Notifier messageState={messageState} />
       <Section>
         <div className="flex flex-col w-full">

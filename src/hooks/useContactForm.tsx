@@ -72,7 +72,6 @@ const useContactForm = () => {
     });
 
     if (resp.status === 200) {
-      console.log("200 resp status returned");
       setMessageState({
         show: true,
         type: "success",
