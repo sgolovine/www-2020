@@ -20,6 +20,8 @@ exports.handler = async function (event, _context, callback) {
       return;
     }
 
+    console.log("user message", userMessage);
+
     // Sanitation
     // Remove Zalgo Characters
     const removeZalgo = clean(userMessage);
@@ -55,8 +57,6 @@ exports.handler = async function (event, _context, callback) {
         },
       },
     });
-
-    console.log(updateResp.statusCode);
 
     callback(null, { statusCode: 201, body: "Success!" });
   } catch {

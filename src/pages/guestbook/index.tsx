@@ -47,7 +47,10 @@ const GuestbookPage = () => {
           ) : (
             parsedGuestbookData.map((item, index) => {
               return (
-                <div className="border p-3 my-2 hover:shadow rounded">
+                <div
+                  key={index}
+                  className="border p-3 my-2 hover:shadow rounded"
+                >
                   <p className="mb-4" key={`gb-item-${index}-${item[0]}`}>
                     {item}
                   </p>
