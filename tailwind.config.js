@@ -9,6 +9,7 @@ module.exports = {
         github: "#181717",
         "brand-yellow": "#ffd23f",
         "brand-white": "#f7fff7",
+        "brand-link": "#adb5bd",
       },
     },
   },
