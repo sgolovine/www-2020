@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const PageLayout: React.FC<Props> = ({ children }) => {
-  return <div className="py-4 px-2 md:px-0">{children}</div>;
+  return <div className="max-w-3xl mx-auto py-4 px-2 md:px-0">{children}</div>;
 };

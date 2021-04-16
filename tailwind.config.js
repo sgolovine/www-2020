@@ -7,6 +7,8 @@ module.exports = {
         instagram: "#E4405F",
         linkedin: "#0077B5",
         github: "#181717",
+        "brand-yellow": "#ffd23f",
+        "brand-white": "#f7fff7",
       },
     },
   },

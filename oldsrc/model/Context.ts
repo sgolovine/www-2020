@@ -10,10 +10,19 @@ type ContactInfoTypes = "phone" | "email";
 export type SiteProject = {
   name: string;
   desc: string;
-  href: string;
+  links?: {
+    name: string;
+    href: string;
+  }[];
+};
+
+type ContextRoute = {
+  name: string;
+  path: string;
 };
 
 export type SiteContext = {
+  headline: string;
   bio: string;
   links: {
     [K in SocialLinkTypes]: string;
@@ -22,4 +31,5 @@ export type SiteContext = {
     [K in ContactInfoTypes]: string;
   };
   projects: SiteProject[];
+  navigation: ContextRoute[];
 };

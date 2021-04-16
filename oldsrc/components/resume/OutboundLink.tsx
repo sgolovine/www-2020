@@ -9,7 +9,7 @@ type Props = {
 export const OutboundLink: React.FC<Props> = ({ href, name, className }) => {
   return (
     <a
-      className={`${className} hover:underline`}
+      className={`${className} text-blue-500 hover:underline`}
       href={href}
       target="_blank"
       rel="noopener noreferrer"

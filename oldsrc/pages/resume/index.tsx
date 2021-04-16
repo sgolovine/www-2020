@@ -7,12 +7,14 @@ import { EducationSection } from "~/components/resume/sections/EducationSection"
 import { SideProjectsSection } from "~/components/resume/sections/SideProjectsSection";
 import { SkillsSection } from "~/components/resume/sections/SkillsSection";
 import { WorkExperienceSection } from "~/components/resume/sections/WorkExperienceSection";
+import Layout from "~/components/site/Layout";
 import resumeContext from "~/context/ResumeContext";
+import { ResumeSections } from "~/model/Resume";
 
 const ResumePage = () => {
-  const context = useContext(resumeContext);
+  const context = useContext<ResumeSections>(resumeContext);
   return (
-    <>
+    <Layout>
       <ResumePageHeader />
       <PageLayout>
         <ContactInfoSection contactInfo={context.contactInfo} />
@@ -30,7 +32,7 @@ const ResumePage = () => {
           <EducationSection education={context.education} />
         </SectionLayout>
       </PageLayout>
-    </>
+    </Layout>
   );
 };
 

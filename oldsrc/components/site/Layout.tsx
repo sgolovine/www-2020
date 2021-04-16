@@ -3,7 +3,6 @@ import React, { ReactNode } from "react";
 import { noHeaderRoutes } from "~/constants/pageHeaders";
 import Footer from "./Footer";
 import Header from "./Header";
-import SocialHeader from "./SocialHeader";
 
 type Props = {
   children: ReactNode;
@@ -29,8 +28,7 @@ const Layout: React.FC<Props> = ({ children, blogPost }) => {
     <ContainerComponent>
       <div className="max-w-xl w-full mx-auto">
         {shouldShowHeader && (
-          <header className="h-18 px-4">
-            <SocialHeader />
+          <header className="px-6 md:px-0 my-6">
             <Header />
           </header>
         )}

@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode } from "react";
-import { ResumeSections } from "~/model";
+import { ResumeSections } from "~/model/Resume";
 import contactInfoData from "@data/resume/contact-info.json";
 import educationData from "@data/resume/education.json";
 import sideProjectsData from "@data/resume/side-projects.json";
@@ -18,7 +18,7 @@ const contextValue: ResumeSections = {
   workExperience: workExperienceData.workExperience,
 };
 
-export const resumeContext = createContext<ResumeSections>(contextValue);
+const resumeContext = createContext<ResumeSections>(contextValue);
 
 export const ResumeContextProvider: React.FC<Props> = ({ children }) => {
   return (

@@ -3,72 +3,22 @@
     {
       "name": "Gistmarks",
       "desc": "Quickly create and share bookmark collections with others using Github Gist. This is the spiritual successor to Fav.sh",
-      "links": [
-        {
-          "name": "Website",
-          "href": "https://gistmarks.io"
-        }
-      ]
+      "href": "https://gistmarks.io"
     },
     {
       "name": "Webhost Watchdog",
       "desc": "Webhost Watchdog is a blog for comprehensive reviews of webhosting products. Reviews the most popular webhosting products form the top hosting companies in the market today",
-      "links": [
-        {
-          "name": "Website",
-          "href": "https://webhostwatchdog.com"
-        }
-      ]
-    },
-    {
-      "name": "My Resume",
-      "desc": "An online resume built using NextJS and TailwindCSS",
-      "links": [
-        {
-          "name": "Website",
-          "href": "https://sunnygolovine.com/resume"
-        }
-      ]
+      "href": "https://webhostwatchdog.com"
     },
     {
       "name": "Fav Bookmark Manager",
       "desc": "Fav Bookmark Manager (or simply fav.sh) is an open source bookmark manager extension for Chrome and Firefox that syncs with Github Gist. Backup, collect, publish and share you bookmarks all while staying in control of your data.",
-      "links": [
-        {
-          "name": "Chrome Web Store",
-          "href": "https://chrome.google.com/webstore/detail/fav-bookmark-manager/gammmbkeceiljlgijimbhhgkfmiejnkl"
-        },
-        {
-          "name": "Firefox Addon",
-          "href": "https://addons.mozilla.org/firefox/addon/fav/"
-        },
-        {
-          "name": "Source Code",
-          "href": "https://github.com/fav-sh"
-        },
-        {
-          "name": "Website",
-          "href": "https://fav.sh"
-        }
-      ]
+      "href": "https://fav.sh"
     },
     {
       "name": "TipTrack",
       "desc": "TipTrack is a tip tracking app for servers, bartenders and more. Lets users create custom analytics to track their earnings",
-      "links": [
-        {
-          "name": "App Store",
-          "href": "https://apps.apple.com/us/app/tiptrack/id1495916444"
-        },
-        {
-          "name": "Google Play Store",
-          "href": "https://play.google.com/store/apps/details?id=com.glvn.tiptrack"
-        },
-        {
-          "name": "Website",
-          "href": "https://tiptrack.app/"
-        }
-      ]
+      "href": "https://tiptrack.app/"
     }
   ]
 }

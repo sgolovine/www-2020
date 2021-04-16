@@ -20,7 +20,7 @@ const ContactInfoItem: React.FC<ContactInfoItemProps> = ({
   return (
     <div className="flex flex-row justify-between">
       <p className="w-20 font-bold text-sm">{label}</p>
-      <a href={href} className="text-sm hover:underline">
+      <a href={href} className="text-sm text-blue-500 hover:underline">
         {value}
       </a>
     </div>
