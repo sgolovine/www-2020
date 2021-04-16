@@ -89,7 +89,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       {/* Primary Content */}
       <div className="flex flex-row">
         {/* Sidebar */}
-        <div className="px-10 hidden md:block">
+        <div className="pr-10 hidden md:block">
           <Sidebar />
         </div>
 
