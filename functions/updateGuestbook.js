@@ -20,8 +20,6 @@ exports.handler = async function (event, _context, callback) {
       return;
     }
 
-    console.log("user message", userMessage);
-
     // Sanitation
     // Remove Zalgo Characters
     const removeZalgo = clean(userMessage);
