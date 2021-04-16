@@ -8,7 +8,7 @@ type FormState = {
   message: string;
 };
 
-type MessageState = {
+export type MessageState = {
   show: boolean;
   type: "success" | "error" | null;
   message: string | null;

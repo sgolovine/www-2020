@@ -32,12 +32,16 @@ exports.handler = async function (event, _context, callback) {
 
     const resp = await sgMail.send(composedMessage);
     // Check that the message was sucessfully send to sendgrid
-    if (resp.statusCode !== 202) {
-      callback(null, { statusCode: 400, body: "Error! Sending Message" });
+    if (resp.length === 0 || resp[0].statusCode !== 202) {
+      callback(null, {
+        statusCode: 400,
+        body: "Error! Sending Message",
+      });
       return;
     }
 
     callback(/** error */ null, { statusCode: 200, body: "Success!" });
+    return;
   } catch {
     callback(null, { statusCode: 400, body: "Error!" });
     return;
