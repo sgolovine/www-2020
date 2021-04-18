@@ -1,14 +1,10 @@
-import React, { createContext, ReactNode } from "react";
-import { ResumeSections } from "~/model";
+import React, { createContext } from "react";
+import { ProviderProps, ResumeSections } from "~/model";
 import contactInfoData from "@data/resume/contact-info.json";
 import educationData from "@data/resume/education.json";
 import sideProjectsData from "@data/resume/side-projects.json";
 import skillsData from "@data/resume/skills.json";
 import workExperienceData from "@data/resume/work-experience.json";
-
-type Props = {
-  children: ReactNode;
-};
 
 const contextValue: ResumeSections = {
   skills: skillsData.skills,
@@ -20,7 +16,9 @@ const contextValue: ResumeSections = {
 
 export const resumeContext = createContext<ResumeSections>(contextValue);
 
-export const ResumeContextProvider: React.FC<Props> = ({ children }) => {
+export const ResumeContextProvider: React.FC<ProviderProps> = ({
+  children,
+}) => {
   return (
     <resumeContext.Provider value={contextValue}>
       {children}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ErrorPage from "next/error";
 import {
   fetchPost,
@@ -7,12 +7,21 @@ import {
 } from "~/helpers/fetchPosts";
 import { Post } from "~/model/Blog";
 import { Header } from "~/components/Typography";
+import { useAnalytics } from "~/hooks/useAnalytics";
 
 type Props = {
   post: Post | null;
 };
 
 const PostTemplate: React.FC<Props> = ({ post }) => {
+  const { trackPageView } = useAnalytics();
+
+  useEffect(() => {
+    trackPageView({
+      title: `Blog Post: ${post?.title}`,
+    });
+  }, []);
+
   if (!post) {
     return <ErrorPage statusCode={404} />;
   }

@@ -1,8 +1,9 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import { Section } from "~/components/Section";
 import { Header } from "~/components/Typography";
 import { fetchAllPosts } from "~/helpers/fetchPosts";
+import { useAnalytics } from "~/hooks/useAnalytics";
 import { PostReturnType } from "~/model";
 
 type Props = {
@@ -30,6 +31,14 @@ const PostItem: React.FC<PostProps> = ({ post }) => {
 };
 
 const BlogPage: React.FC<Props> = ({ postsMetadata }) => {
+  const { trackPageView } = useAnalytics();
+
+  useEffect(() => {
+    trackPageView({
+      title: "Blog Page",
+    });
+  }, []);
+
   return (
     <>
       <Header>Posts</Header>

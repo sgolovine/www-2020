@@ -1,11 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ProjectCard } from "~/components/ProjectCard";
 import { Section } from "~/components/Section";
 import { Header, Text } from "~/components/Typography";
 import { SiteContext } from "~/context";
+import { useAnalytics } from "~/hooks/useAnalytics";
 
 const IndexPage = () => {
   const siteContext = useContext(SiteContext);
+
+  const { trackPageView } = useAnalytics();
+
+  useEffect(() => {
+    trackPageView({
+      title: "Home Page",
+    });
+  }, []);
 
   return (
     <>

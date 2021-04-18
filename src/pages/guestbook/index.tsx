@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "~/components/Button";
 import { TextArea } from "~/components/Input";
 import { Header } from "~/components/Typography";
+import { useAnalytics } from "~/hooks/useAnalytics";
 import useGuestbook from "~/hooks/useGuestbook";
 
 const GuestbookPage = () => {
+  const { trackPageView } = useAnalytics();
   const {
     message,
     updateMessage,
@@ -15,6 +17,12 @@ const GuestbookPage = () => {
     showError,
     errorMessage,
   } = useGuestbook();
+
+  useEffect(() => {
+    trackPageView({
+      title: "Guestbook Page",
+    });
+  }, []);
   return (
     <>
       <Header>GuestBook</Header>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { PageLayout } from "~/components/resume/PageLayout";
 import ResumePageHeader from "~/components/resume/ResumeHeader";
 import { SectionLayout } from "~/components/resume/SectionLayout";
@@ -8,9 +8,17 @@ import { SideProjectsSection } from "~/components/resume/sections/SideProjectsSe
 import { SkillsSection } from "~/components/resume/sections/SkillsSection";
 import { WorkExperienceSection } from "~/components/resume/sections/WorkExperienceSection";
 import resumeContext from "~/context/ResumeContext";
+import { useAnalytics } from "~/hooks/useAnalytics";
 
 const ResumePage = () => {
   const context = useContext(resumeContext);
+  const { trackPageView } = useAnalytics();
+
+  useEffect(() => {
+    trackPageView({
+      title: "Resume Page",
+    });
+  }, []);
   return (
     <>
       <ResumePageHeader />

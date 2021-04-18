@@ -1,9 +1,10 @@
-import React, { ReactNode, useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Button } from "~/components/Button";
 import { TextArea, TextInput } from "~/components/Input";
 import { Section } from "~/components/Section";
 import { Header } from "~/components/Typography";
 import { SiteContext } from "~/context";
+import { useAnalytics } from "~/hooks/useAnalytics";
 import useContactForm, { MessageState } from "~/hooks/useContactForm";
 
 interface NotifierProps {
@@ -36,6 +37,8 @@ const Notifier: React.FC<NotifierProps> = ({ messageState }) => {
 };
 
 const ContactPage = () => {
+  const { trackPageView } = useAnalytics();
+
   const {
     form,
     messageState,
@@ -45,6 +48,12 @@ const ContactPage = () => {
   } = useContactForm();
 
   const siteContext = useContext(SiteContext);
+
+  useEffect(() => {
+    trackPageView({
+      title: "Contact Page",
+    });
+  }, []);
 
   return (
     <>

@@ -1,17 +1,21 @@
 import React from "react";
-import { AppProps } from "next/app";
+import ContextWrapper from "~/context";
 import Layout from "~/components/Layout";
+import { AppProps } from "next/app";
+import { AnalyticsProvider } from "~/helpers/analytics";
+
 import "~/styles/tailwind.css";
 import "~/styles/base.css";
-import ContextWrapper from "~/context";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <ContextWrapper>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ContextWrapper>
+    <AnalyticsProvider>
+      <ContextWrapper>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ContextWrapper>
+    </AnalyticsProvider>
   );
 };
 
