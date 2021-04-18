@@ -6,9 +6,9 @@ to be done on the site. This is an ongoing list.
 ## Features
 
 - Analytics
-- Professional Projects
 - Performance Testing
 - Add Social Links
+- Professional Projects
 - Dev.to post integration
 
 ## Bugs

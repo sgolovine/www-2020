@@ -19,5 +19,13 @@
   status = 301
   force = true
 
+# FLoC Off Google
+# https://developer.chrome.com/blog/floc/#how-can-websites-opt-out-of-the-floc-computation
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Permissions-Policy = "interest-cohort=()"
+
 [[ plugins ]]
   package = "netlify-plugin-cache-nextjs"
+
