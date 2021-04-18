@@ -18,7 +18,7 @@ const PostTemplate: React.FC<Props> = ({ post }) => {
 
   useEffect(() => {
     trackPageView({
-      title: `Blog Post: ${post?.title}`,
+      title: "Blog Post Page",
     });
   }, []);
 
