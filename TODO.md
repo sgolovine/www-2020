@@ -5,16 +5,15 @@ to be done on the site. This is an ongoing list.
 
 ## Features
 
-- Analytics
-- Performance Testing
 - Add Social Links
+- Performance Testing
 - Professional Projects
 - Dev.to post integration
 
 ## Bugs
 
-- Fix Contact Link
-
 ## Completed
 
+- Fix Contact Link
+- Analytics
 - Fix Guestbook
