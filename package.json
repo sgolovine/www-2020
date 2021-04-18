@@ -8,6 +8,7 @@
   "license": "MIT",
   "homepage": "https://glvn.co",
   "dependencies": {
+    "@datapunt/matomo-tracker-react": "^0.4.0",
     "@sendgrid/mail": "^7.4.2",
     "axios": "^0.21.1",
     "dompurify": "^2.2.7",
