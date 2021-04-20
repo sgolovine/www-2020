@@ -39,7 +39,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "dayjs": "^1.10.4",
     "dotenv": "^8.2.0",
-    "netlify-cli": "^3.18.0",
+    "netlify-cli": "^3.19.1",
     "next-compose-plugins": "^2.2.1",
     "postcss": "^8.2.10",
     "postcss-cli": "^8.3.1",
