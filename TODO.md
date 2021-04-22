@@ -6,7 +6,6 @@ to be done on the site. This is an ongoing list.
 ## Features
 
 - Add Social Links
-- Performance Testing
 - Professional Projects
 - Dev.to post integration
 
@@ -14,6 +13,7 @@ to be done on the site. This is an ongoing list.
 
 ## Completed
 
+- Performance Testing
 - Fix Contact Link
 - Analytics
 - Fix Guestbook
