@@ -1,13 +1,17 @@
 import { useMatomo } from "@datapunt/matomo-tracker-react";
 import { useRouter } from "next/router";
 
-// page-action should be used whenever a user clicks a button of performs and action
-// external-link should be performed whenever a user clicks on an external link
-// resume-link is a special category for actions performed inside the resume
-
-// action should a descriptive string of what the user is doing
 interface TrackProps {
-  category: "page-action" | "external-link" | "resume-link";
+  // the "layout" page should be used for any items that are not part of a single page
+  page:
+    | "home"
+    | "blog"
+    | "links"
+    | "resume"
+    | "contact"
+    | "guestbook"
+    | "layout";
+  // a descriptive string of what the user is doing
   action: string;
 }
 
@@ -36,14 +40,14 @@ export const useAnalytics = () => {
     });
   };
 
-  // const trackEvent = ({ category, action }: TrackProps) =>
-  //   matomo_trackEvent({
-  //     category,
-  //     action,
-  //   });
+  const trackEvent = ({ page, action }: TrackProps) =>
+    matomo_trackEvent({
+      category: page,
+      action,
+    });
 
   return {
     trackPageView,
-    // trackEvent
+    trackEvent,
   };
 };

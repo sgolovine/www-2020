@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { sidebarRoutes } from "~/defines/navigation";
+import { useAnalytics } from "~/hooks/useAnalytics";
 import { useLinkMatch } from "~/hooks/useLinkMatch";
 
 interface SidebarLinkProps {
@@ -11,9 +12,17 @@ interface SidebarLinkProps {
 
 const SidebarLink: React.FC<SidebarLinkProps> = ({ name, href, active }) => {
   const className = active ? `text-brand-yellow` : `text-brand-link`;
+  const { trackEvent } = useAnalytics();
   return (
     <Link href={href}>
-      <a className={className}>{name}</a>
+      <a
+        className={className}
+        onClick={() =>
+          trackEvent({ page: "layout", action: `Link Pressed: ${name}` })
+        }
+      >
+        {name}
+      </a>
     </Link>
   );
 };

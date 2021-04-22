@@ -1,6 +1,7 @@
 import React, { ReactNode, useContext } from "react";
 import { Header } from "~/components/Typography";
 import { SiteContext } from "~/context";
+import { useAnalytics } from "~/hooks/useAnalytics";
 import {
   DevToIcon,
   EmailIcon,
@@ -54,11 +55,15 @@ function formatLink(link: string, type: string) {
 const LinkItem: React.FC<Props> = ({ title, href, type, itemKey }) => {
   const Icon = getIcon(itemKey);
   const formattedHref = formatLink(href, type);
+  const { trackEvent } = useAnalytics();
 
   return (
     <span className="flex flex-row items-center mb-6">
       <div className="h-6 w-6">{Icon}</div>
       <a
+        onClick={() =>
+          trackEvent({ page: "links", action: `Link Pressed: ${title}` })
+        }
         href={formattedHref}
         className="ml-2 text-2xl text-brand-link font-bold hover:text-brand-yellow"
       >
@@ -70,7 +75,6 @@ const LinkItem: React.FC<Props> = ({ title, href, type, itemKey }) => {
 
 const LinkPage = () => {
   const { links } = useContext(SiteContext);
-  console.log(links);
   return (
     <>
       <Header>Links</Header>
