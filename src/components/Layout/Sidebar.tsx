@@ -26,7 +26,7 @@ const Sidebar: React.FC = () => {
         {enabledRoutes.length > 0 &&
           enabledRoutes.map((route) => {
             return (
-              <li className="py-2 uppercase font-bold text-lg">
+              <li className="py-2 uppercase font-bold text-lg" key={route.key}>
                 <SidebarLink
                   name={route.name.toUpperCase()}
                   href={route.route}

@@ -1,10 +1,3 @@
-export type SocialLinkTypes =
-  | "github"
-  | "instagram"
-  | "linkedin"
-  | "twitter"
-  | "dev";
-
 type ContactInfoTypes = "phone" | "email";
 
 export type SiteProject = {
@@ -16,8 +9,11 @@ export type SiteProject = {
 export type SiteContext = {
   bio: string;
   links: {
-    [K in SocialLinkTypes]: string;
-  };
+    name: string;
+    value: string;
+    key: string;
+    type: string;
+  }[];
   contactInfo: {
     [K in ContactInfoTypes]: string;
   };

@@ -7,7 +7,7 @@ import contact from "@data/site/contact.json";
 
 const contextValue: SiteContext = {
   bio: about.bio,
-  links: links,
+  links: links.links,
   projects: projects.projects,
   contactInfo: {
     email: contact.email,
