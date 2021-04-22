@@ -6,8 +6,6 @@ class AppDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>Sunny Golovine</title>
-
           <link rel="shortcut icon" href="/img/favicon.ico" />
 
           <meta
