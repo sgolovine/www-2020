@@ -1,3 +1,5 @@
+Previous version of my site. Check out the current version [here](https://github.com/sgolovine/sunnygolovine.com)
+
 ## My Website
 
 ![screenshot](./screenshot.png)
