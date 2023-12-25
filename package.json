@@ -38,7 +38,7 @@
     "autoprefixer": "^10.2.5",
     "babel-plugin-module-resolver": "^4.1.0",
     "dayjs": "^1.10.4",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.3.1",
     "netlify-cli": "^3.18.0",
     "next-compose-plugins": "^2.2.1",
     "postcss": "^8.2.10",
